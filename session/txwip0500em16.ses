@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DR_Controller><description>Pychem Test</description><versionID>B61O_a_ext</versionID><type>session</type><name>txwip0500em16</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-09-06T03:48:18Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-08-26T13:19:41Z</creationDateTime><createdBy>ict004</createdBy></Version><descriptionReference>txwip0500em16</descriptionReference><retrieveMainDataOnly>yes</retrieveMainDataOnly><ControllerTableRelationship><showView>false</showView><dynIndexSwitching>1</dynIndexSwitching><IndexUsage><nrGroupFields>0</nrGroupFields><sequence>0</sequence><active>false</active><position>1</position></IndexUsage><toTable>txwip030</toTable><position>1</position><descriptionReference>txwip030</descriptionReference><description>Pychem Tests</description><name>txwip030</name></ControllerTableRelationship><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>1</position><description/><name>start.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>2</position><description/><name>first.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>3</position><description/><name>next.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>4</position><description/><name>prev.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>5</position><description/><name>last.view</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>6</position><description/><name>def.find</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>7</position><description/><name>find.data</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>8</position><description/><name>first.set</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>9</position><description/><name>next.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>10</position><description/><name>display.set</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>11</position><description/><name>prev.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>12</position><description/><name>rotate.curr</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>13</position><description/><name>last.set</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>14</position><description/><name>add.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>15</position><description/><name>update.db</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>16</position><description/><name>dupl.occur</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>17</position><description/><name>recover.set</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>18</position><description/><name>mark.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>19</position><description/><name>mark.occur</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>20</position><description/><name>change.order</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>21</position><description/><name>modify.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>23</position><description/><name>print.data</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>24</position><description/><name>create.job</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>25</position><description/><name>change.frm</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>26</position><description/><name>first.frm</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>27</position><description/><name>next.frm</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>28</position><description/><name>prev.frm</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>29</position><description/><name>last.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>31</position><description/><name>resize.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>32</position><description/><name>cust.grid</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>33</position><description/><name>cmd.options</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>34</position><description/><name>zoom</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>35</position><description/><name>interrupt</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>36</position><description/><name>end.program</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>37</position><description/><name>abort.program</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>39</position><description/><name>text.manager</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>40</position><description/><name>run.job</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>41</position><description/><name>global.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>42</position><description/><name>global.copy</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>43</position><description/><name>save.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>44</position><description/><name>get.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>45</position><description/><name>start.chart</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>46</position><description/><name>start.query</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>47</position><description/><name>select.all</name></StandardCommand><defaultStartCommand>false</defaultStartCommand><DR_Module><description>Pychem Test</description><versionID>B61O_a_ext</versionID><type>library</type><name>txwip0500em16</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-09-06T03:47:55Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-08-26T13:19:24Z</creationDateTime><createdBy>ict004</createdBy></Version><Source><sourceVersion><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-09-06T03:47:55Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-08-26T13:19:24Z</creationDateTime><createdBy>ict004</createdBy></sourceVersion><sourceVersionID>B61O_a_ext</sourceVersionID><sourceObjectID>1</sourceObjectID><expression>|*******************************************************************************
+|* txwip0500em09  B61O_a_ext
+|* Micro Test
+|* ict004
+|* 2026-08-11 [10:55]
+|*******************************************************************************
+|* Script Type: 123
+|*******************************************************************************
+
+|*************************** declaration section *******************************
+declaration:
+
+	table	ttxwip020		|* QC Cost Summary
+	table	ttxwip021		|* Reagents Header	
+	table	ttxwip022		|* Reagents Details
+	table	ttxwip030		|* Micro Test Header
+	table	ttxwip025		|* Micro Test Details
+	table	ttxwip026		|* QC Personnel
+	table	ttxwip027		|* Micro Test Materials
+	table	ttxwip028		|* Micro Test Reagents
+	table	ttxwip030		|* Pychem Test Header
+	table	ttxwip031		|* Pychem Test Details
+	table	ttxwip033		|* Third Party Test Header
+	table	ttxwip034		|* Third Party Test Details
+	table	ttxwip035 		|* QC Items
+	table	ttxwip036		|* QC Cost Master Data
+	table	ttxwip037		|* QC Cost Details
+
+	table	ttcibd001		|* Items
+	table	ttcibd003		|* Conversion Factors
+	table	ttdipu001		|* Item - Purchase
+	table	ttcmcs012		|* Units by Unit Set
+	
+	extern domain tcorno		test.code
+	extern domain tcmcs.str50	prid.desc
+
+|****************************** program section ********************************
+
+zoom.from.all:
+on.entry:
+	import("txwip030.ptid", test.code)
+
+	if not isspace(test.code) then
+		select txwip030.*
+		from txwip030
+		where txwip030.ptid = :test.code
+		as set with 1 rows
+		selectdo
+		endselect
+
+		execute(find.data)
+	endif
+
+main.table.io:
+before.write:
+	if txwip030.dcdt = 0 then
+		txwip030.dcdt = utc.num()
+	endif
+
+before.rewrite:
+	txwip030.dmdt = utc.num()
+	
+before.new.object:
+	txwip030.prid = 2
+	update_personnel_desc(txwip030.prid)
+
+|****************************** field section **********************************
+
+field.txwip030.prtm:
+when.field.changes:
+	update_labor_hour(txwip030.prtm)
+	update_labor_cost(txwip030.prid, txwip030.lbhr)
+	
+field.prid.desc:
+before.display:
+	update_personnel_desc(txwip030.prid)
+	
+|****************************** function section *******************************
+
+functions:
+
+function void update_labor_hour(domain tcqiv1 mins){
+	txwip030.lbhr = compute_labor_hour(mins)
+}
+
+function domain tcqiv1 compute_labor_hour(domain tcqiv1 mins){
+	domain tcqiv1 labor.hr, hr
+	
+	hr = 60
+	labor.hr = 0
+	
+	if mins &lt;&gt; 0 then
+		labor.hr = mins / hr
+	endif
+	
+	return(labor.hr)
+}
+
+function domain tcqiv1 get_rate_hr(domain tcmcs.long prid){
+	domain tcqiv1 rate.hr
+	
+	rate.hr = 0
+	
+	select txwip026.rthr
+	from txwip026
+	where txwip026.prid = :prid
+	selectdo
+		rate.hr = txwip026.rthr
+	endselect
+	
+	return(rate.hr)
+}
+
+function void update_labor_cost(domain tcmcs.long prid, domain tcqiv1 labor.hr){
+	txwip030.tlst = compute_labor_cost(prid, labor.hr)
+}
+
+function domain tcqiv1 compute_labor_cost(domain tcmcs.long prid, domain tcqiv1 labor.hr){
+	domain tcqiv1 labor.cost
+	
+	labor.cost = 0 
+	
+	if labor.hr = 0 or labor.hr = 0 then
+		labor.cost = 0
+	else
+		labor.cost = get_rate_hr(prid) * labor.hr
+	endif
+	
+	return(labor.cost)
+}
+
+function void update_personnel_desc(domain tcmcs.long prid){
+	prid.desc = get_personnel_desc(prid)
+}
+
+function domain tcmcs.str50 get_personnel_desc(domain tcmcs.long prid){
+	domain tcmcs.str50 desc
+	
+	desc = ""
+	
+	select txwip026.dscr
+	from txwip026
+	where txwip026.prid = :prid
+	selectdo
+		desc = txwip026.dscr
+	endselect
+	
+	return(desc)
+}
+
+function extern void compute_micro_test_cost(){
+	domain tcqiv1 total.labor.cost, total.material.cost, total.test.cost
+	long ret
+	
+	execute(15)
+
+	total.labor.cost = 0
+	total.material.cost = 0
+	total.test.cost = 0
+	
+	total.labor.cost = txwip030.tlst
+
+	select sum(txwip031.mcst):total.material.cost
+	from txwip031
+	where txwip031.ptid = :txwip030.ptid
+	selectdo
+	endselect
+
+	total.test.cost = total.labor.cost + total.material.cost
+	
+	select txwip030.*
+	from txwip030 for update
+	where txwip030.ptid = :txwip030.ptid
+	selectdo
+		txwip030.tmst = total.material.cost
+		txwip030.pyst = total.test.cost
+		if db.update(ttxwip030, db.retry) &lt;&gt; 0 then
+			message("Error " &amp; str$(e) &amp; " occurred while updating the record.")
+			abort.transaction()
+		endif
+	endselect
+	
+	commit.transaction()
+	
+	execute(find.data)
+	
+	ret = refresh.parent(-1)
+	synchronize.satellite("txwip0500em17")
+}</expression><expressionLanguageType>Baan4C</expressionLanguageType><sourceType>1</sourceType><sourceDescription>Pychem Test</sourceDescription><sourceName>txwip0500em16</sourceName></Source><documentation/><Attachment><type>relnotes</type><name>txwip0500em16</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em16</name></Attachment><additionalConstraints>2590</additionalConstraints><additionalInstructions/><keyword>||</keyword><application>EXTce01106</application></DR_Module><startInCompanyZero>false</startInCompanyZero><repSevLang>false</repSevLang><mainSession>true</mainSession><moduleType>1</moduleType><windowType>15</windowType><subType>1</subType><status>1</status><documentation/><objectLabel/><application>EXTce01106</application><sessionReferenceDescriptionReference>txwip0500em16</sessionReferenceDescriptionReference><sessionReferenceDescription>Pychem Test</sessionReferenceDescription><sessionReference>txwip0500em16</sessionReference><UIScript>txwip0500em16</UIScript></DR_Controller>

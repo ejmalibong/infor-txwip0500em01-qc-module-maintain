@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DR_Controller><description>Generate QC Cost</description><versionID>B61O_a_ext</versionID><type>session</type><name>txwip0500em02</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-09-06T12:08:54Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-08-06T01:56:57Z</creationDateTime><createdBy>ict004</createdBy></Version><descriptionReference>txwip0500em02</descriptionReference><retrieveMainDataOnly>yes</retrieveMainDataOnly><ControllerTableRelationship><showView>false</showView><dynIndexSwitching>1</dynIndexSwitching><IndexUsage><nrGroupFields>0</nrGroupFields><sequence>1</sequence><active>true</active><position>1</position></IndexUsage><toTable>txwip020</toTable><position>1</position><descriptionReference>txwip020</descriptionReference><description>QC Costs</description><name>txwip020</name></ControllerTableRelationship><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>1</position><description/><name>start.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>2</position><description/><name>first.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>3</position><description/><name>next.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>4</position><description/><name>prev.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>5</position><description/><name>last.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>6</position><description/><name>def.find</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>7</position><description/><name>find.data</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>8</position><description/><name>first.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>9</position><description/><name>next.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>10</position><description/><name>display.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>11</position><description/><name>prev.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>12</position><description/><name>rotate.curr</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>13</position><description/><name>last.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>14</position><description/><name>add.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>15</position><description/><name>update.db</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>16</position><description/><name>dupl.occur</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>17</position><description/><name>recover.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>18</position><description/><name>mark.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>19</position><description/><name>mark.occur</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>20</position><description/><name>change.order</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>21</position><description/><name>modify.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>23</position><description/><name>print.data</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>24</position><description/><name>create.job</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>25</position><description/><name>change.frm</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>26</position><description/><name>first.frm</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>27</position><description/><name>next.frm</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>28</position><description/><name>prev.frm</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>29</position><description/><name>last.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>31</position><description/><name>resize.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>32</position><description/><name>cust.grid</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>33</position><description/><name>cmd.options</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>34</position><description/><name>zoom</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>35</position><description/><name>interrupt</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>36</position><description/><name>end.program</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>37</position><description/><name>abort.program</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>39</position><description/><name>text.manager</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>40</position><description/><name>run.job</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>41</position><description/><name>global.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>42</position><description/><name>global.copy</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>43</position><description/><name>save.defaults</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>44</position><description/><name>get.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>45</position><description/><name>start.chart</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>46</position><description/><name>start.query</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>47</position><description/><name>select.all</name></StandardCommand><defaultStartCommand>false</defaultStartCommand><DR_Module><description>Generate QC Cost</description><versionID>B61O_a_ext</versionID><type>library</type><name>txwip0500em02</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-09-09T01:20:13Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-08-06T01:56:57Z</creationDateTime><createdBy>ict004</createdBy></Version><Source><sourceVersion><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-09-09T01:20:13Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-08-06T01:56:57Z</creationDateTime><createdBy>ict004</createdBy></sourceVersion><sourceVersionID>B61O_a_ext</sourceVersionID><sourceObjectID>1</sourceObjectID><expression>|*******************************************************************************
+|* txwip0500em02  B61O_a_ext
+|* Generate QC Cost
+|* ict004
+|* 2026-08-06 [09:56]
+|*******************************************************************************
+|* Script Type: 123
+|*******************************************************************************
+
+|*************************** declaration section *******************************
+declaration:
+
+	table	ttxwip020		|* QC Cost Summary
+	table	ttxwip021		|* Reagents Header	
+	table	ttxwip022		|* Reagents Details
+	table	ttxwip024		|* Micro Test Header
+	table	ttxwip025		|* Micro Test Details
+	table	ttxwip026		|* QC Personnel
+	table	ttxwip027		|* Micro Test Materials
+	table	ttxwip028		|* Micro Test Reagents
+	table	ttxwip030		|* Pychem Test Header
+	table	ttxwip031		|* Pychem Test Details
+	table	ttxwip033		|* Third Party Test Header
+	table	ttxwip034		|* Third Party Test Details
+	table	ttxwip035 		|* QC Items
+	table	ttxwip036		|* QC Cost Master Data
+	table	ttxwip037		|* QC Cost Details
+	
+	table	ttisfc001		|* Production Orders
+	table	ttdsls400		|* Sales Orders
+	table	ttccom100		|* Business Partners
+	table	tticst001		|* Estimated and Actual Material Costs
+	table	ttcibd001		|* Items
+	table	twhltc100		|* Lots
+	table	twhltc101		|* Lot Details
+	table	ttcibd003		|* Conversion Factors
+	
+	extern domain tcnama		bpid.desc
+	extern domain tcitm.dscr	item.desc
+
+|****************************** field section *********************************
+
+field.txwip020.pdno:
+after.zoom:
+	load_jo_details()
+	
+when.field.changes:
+	load_jo_details()
+	
+|****************************** function section ******************************
+
+functions:
+
+function void load_jo_details(){
+	txwip020.clot = ""
+	txwip020.cwar = ""
+	txwip020.item = ""
+	txwip020.bpid = ""
+
+	txwip020.btsz = 0
+	
+	bpid.desc = ""
+	item.desc = ""
+
+	select tisfc001.clot, tisfc001.cwar, tisfc001.mitm, tisfc001.cdf_orno
+	from tisfc001
+	where tisfc001.pdno = :txwip020.pdno
+	as set with 1 rows
+	selectdo
+		txwip020.clot = tisfc001.clot
+		txwip020.item = tisfc001.mitm
+		txwip020.cwar = tisfc001.cwar
+		
+		if trim$(tisfc001.cdf_orno) &lt;&gt; "" then
+			select tccom100.bpid, tccom100.nama
+			from tccom100, tdsls400
+			where tccom100.bpid = tdsls400.ofbp
+			and tdsls400.orno = :tisfc001.cdf_orno
+			as set with 1 rows
+			selectdo
+				txwip020.bpid = tccom100.bpid
+				bpid.desc = tccom100.nama
+			endselect
+		endif
+	endselect
+	
+	select sum(ticst001.ques):txwip020.btsz
+	from ticst001, tcibd001
+	where ticst001.pdno = :txwip020.pdno
+	and tcibd001.item = ticst001.sitm
+	and tcibd001.citg &lt;&gt; "PM"
+	selectdo
+	endselect
+	
+	select tcibd001.dsca
+	from tcibd001
+	where tcibd001.item = :txwip020.item
+	as set with 1 rows
+	selectdo
+		item.desc = tcibd001.dsca
+	endselect
+}
+
+function extern generate_qc_cost(){
+	domain tcqiv1 iidc, mtst, pyst, amst, atst
+	long ret
+	
+	iidc = 0
+	mtst = 0
+	pyst = 0
+	amst = 0
+	atst = 0
+	
+	select txwip020.*
+	from txwip020
+	where txwip020.pdno = :txwip020.pdno
+	as set with 1 rows
+	selectdo
+		message("QC Cost already exists for this production order.")
+		return
+	endselect
+	
+	if trim$(txwip020.clot) = "" then
+		message("No lot number found on this production order.")
+		return
+	endif
+	
+	select txwip036.*
+	from txwip036
+	where txwip036.item = :txwip020.item
+	as set with 1 rows
+	selectdo
+		iidc = txwip036.iidc
+		mtst = compute_total_micro_test_cost(txwip020.item)
+|		pyst = txwip036.pyst
+|		amst = txwip036.amst
+|		atst = txwip036.atst
+	selectempty
+		message("No testing cost setup found for this item.")
+		return
+	endselect
+	
+|	execute(15)
+|	
+|	db.retry.point()
+|	
+|	select txwip020.*
+|	from txwip020
+|	where txwip020.pdno = :txwip020.pdno
+|	as set with 1 rows
+|	selectdo
+|
+|	selectempty
+|	
+|		txwip020.idst = iidc
+|		txwip020.mtst = mtst
+|		txwip020.pyst = pyst
+|		
+|		if txwip020.btsz = 0 then
+|			txwip020.sust = 0
+|			txwip020.amst = 0
+|			txwip020.atst = 0
+|		else
+|			txwip020.sust = (iidc + mtst + pyst) / txwip020.btsz
+|			txwip020.amst = amst / txwip020.btsz
+|			txwip020.atst = atst / txwip020.btsz
+|		endif
+|		
+|		txwip020.qcst = txwip020.sust +
+|			txwip020.amst +
+|			txwip020.atst
+|		
+|		txwip020.gpdt = utc.num()
+|		txwip020.gbby = logname$
+|		
+|		db.insert(ttxwip020, db.retry)
+|		
+|		commit.transaction()
+|	endselect
+|	
+|	message("Process completed.")
+	ret = refresh.parent(-1)
+	end()
+}
+
+| Get the sum of ALL micro test costs
+function domain tcqiv1 compute_total_micro_test_cost(domain tcitem item){
+	domain tcqiv1 total
+	
+	total = 0
+	
+	select txwip037.code
+	from txwip037
+	where txwip037.item = :item
+		and txwip037.code like "M.*"
+		and exists
+			(select txwip024.anly
+			from txwip024
+			where txwip024.freq = 2			| Per Batch
+			and txwip024.anly = txwip037.code)
+	selectdo
+		total = total + compute_micro_test_cost(txwip037.code)
+	endselect
+	
+	return(total)
+}
+
+| Get the cost of EACH micro test (Material Cost, Reagent Cost, Labor Cost)
+function domain tcqiv1 compute_micro_test_cost(domain tcorno anly){
+	domain tcqiv1 sub.total, total, mtrl.cost, rgnt.cost
+	domain tcorno code
+	
+	sub.total = 0
+	total = 0
+	code = trim$(anly)
+	
+	select txwip025.*
+	from txwip025
+	where txwip025.anly = :code
+	selectdo
+		mtrl.cost = compute_materials_cost(txwip025.mtid)
+		rgnt.cost = compute_reagents_cost(txwip025.mtid)
+		
+		| Material Costs + Reagents Cost + Labor Cost
+		sub.total = mtrl.cost + rgnt.cost + txwip025.lbst
+		total = total + sub.total
+	endselect
+	
+	return(total)
+}
+
+| Get the total material cost of EACH micro test activities
+function domain tcqiv1 compute_materials_cost(domain tcmcs.long mtid){
+	domain tcqiv1 sub.total, total, cost.per.testing
+	domain tccopr lot.price
+	domain tcconv conversion.value
+	
+	sub.total = 0
+	total = 0
+	cost.per.testing = 0
+
+	select txwip027.*
+	from txwip027
+	where txwip027.mtid = :mtid
+	selectdo
+		lot.price = 0
+		conversion.value = 0
+		
+		lot.price = get_lot_price(txwip027.item)
+		conversion.value = get_conversion_value(txwip027.item, txwip027.cuni)
+		
+		if conversion.value = 0 then
+			cost.per.testing = 0
+			sub.total = 0
+		else
+			cost.per.testing = lot.price / conversion.value
+			sub.total = cost.per.testing * txwip027.tsmm
+		endif
+		
+		total = total + sub.total
+	endselect
+	
+	return(total)
+}
+
+| Get the total reagent cost of EACH micro test activities
+function domain tcqiv1 compute_reagents_cost(domain tcmcs.long mtid){
+	domain tcqiv1 sub.total, total, cost.per.sample
+	
+	sub.total = 0
+	total = 0
+	cost.per.sample = 0
+	
+	select txwip028.mtid
+	from txwip028
+	where txwip028.mtid = :mtid
+	selectdo
+		sub.total = get_cost_per_sample(trim$(txwip028.rgnt))
+		total = total + sub.total		
+	endselect
+	
+	return(total)
+}
+
+| Get the reagent cost of EACH reagents (Reagent + Solvent)
+function domain tcqiv1 get_cost_per_sample(domain tcmcs.str50 rgnt){
+	domain tcqiv1 sub.total, total, reagent.cost, solvent.cost,
+		reagent.lot.price, solvent.lot.price, reagent.conversion.value,
+		solvent.conversion.value
+	
+	
+	sub.total = 0
+	total = 0
+	
+	select txwip021.*
+	from txwip021
+	where txwip021.rgnt = :rgnt
+	as set with 1 rows
+	selectdo
+		
+		reagent.cost = 0
+		solvent.cost = 0
+			
+		select txwip022.*
+		from txwip022
+		where txwip022.rgnt = :txwip021.rgnt
+		selectdo
+			reagent.cost = compute_param_cost(txwip022.rgtp, trim$(txwip022.item), txwip022.rvol, txwip022.rgni)
+			solvent.cost = compute_param_cost(txwip022.sltp, trim$(txwip022.slvn), txwip022.svol, txwip022.slni)
+			sub.total = reagent.cost + solvent.cost
+		selectempty
+			reagent.cost = 0
+			solvent.cost = 0
+		endselect
+		
+		total = total + sub.total
+	endselect
+	
+	return(total)
+}
+
+| Get the parameter cost of EACH components of reagent
+function domain tcqiv1 compute_param_cost(domain txmat.types type, domain tcmcs.str50 param, domain tiqcp1 vol, domain tccuni unit){
+	domain tcqiv1 sub.total, total, cost.per.uom
+	domain tccopr lot.price
+	domain tcconv conversion.value
+
+	total = 0
+	
+	on case etol(type)
+		case 1:	| Get cost per UOM
+			lot.price = 0
+			conversion.value = 0
+			cost.per.uom = 0
+			
+			lot.price = get_lot_price(trim$(param))
+			conversion.value = get_conversion_value(trim$(param), unit)
+			
+			if conversion.value = 0 then
+				cost.per.uom = 0
+				total = 0
+			else
+				cost.per.uom = lot.price / conversion.value
+				total = cost.per.uom * vol
+			endif			
+			break
+		case 2:	| Get cost per sample
+			select txwip021.*
+			from txwip021
+			where txwip021.rgnt = :param
+			as set with 1 rows
+			selectdo
+			
+				select txwip022.*
+				from txwip022
+				where txwip022.rgnt = :txwip021.rgnt
+				selectdo
+					
+					
+					
+				endselect
+				
+			endselect
+			break
+		case 3:	| Get cost of QC Items
+			total = 0
+		default:
+		
+	endcase
+	
+	return(total)	
+}
+
+function domain tccopr get_lot_price(domain tcitem item){
+	domain tcclot lot.number
+	domain tccopr lot.price
+	
+	lot.number = ""
+	lot.price = 0
+	
+	select whltc100.item, whltc100.clot, whltc100.ldat
+	from whltc100
+	where whltc100.item = :item
+		and whltc100.olot = 1				| Purchase
+		and whltc100.ldat &lt;&gt; 0				| Lot Date
+		and (select SUM(whltc105.qhnd)
+			from whltc105
+			where whltc105.item = whltc100.item
+			and whltc105.clot = whltc100.clot) &lt;&gt; 0	| Inventory
+	order by whltc100.ldat
+	as set with 1 rows
+	selectdo
+		select sum(whltc101.pric(1)):lot.price
+		from whltc101
+		where whltc101.item = :whltc100.item
+			and whltc101.clot = :whltc100.clot	| Lot No
+			and whltc101.cpcp = "MC0002"		| Material Cost			
+		as set with 1 rows
+		selectdo
+		selectempty
+			lot.price = 0
+		endselect
+	endselect
+	
+	return(lot.price)
+}
+
+function domain tcconv get_conversion_value(domain tcitem item, domain tccuni unit){
+	domain tcconv value
+	
+	value = 0
+	
+	select tcibd003.conv
+	from tcibd003
+	where tcibd003.item = :item
+		and tcibd003.unit = :unit
+	as set with 1 rows
+	selectdo
+		value = tcibd003.conv
+	selectempty
+		value = 0
+	endselect
+	
+	return(value)
+}</expression><expressionLanguageType>Baan4C</expressionLanguageType><sourceType>4</sourceType><sourceDescription>Generate QC Cost</sourceDescription><sourceName>txwip0500em02</sourceName></Source><documentation/><Attachment><type>relnotes</type><name>txwip0500em02</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em02</name></Attachment><additionalConstraints>2590</additionalConstraints><additionalInstructions/><keyword>||</keyword><application>EXTce01106</application></DR_Module><startInCompanyZero>false</startInCompanyZero><repSevLang>false</repSevLang><mainSession>true</mainSession><moduleType>1</moduleType><windowType>3</windowType><subType>4</subType><status>1</status><documentation/><objectLabel/><application>EXTce01106</application><sessionReferenceDescriptionReference>txwip0500em02</sessionReferenceDescriptionReference><sessionReferenceDescription>Generate QC Cost</sessionReferenceDescription><sessionReference>txwip0500em02</sessionReference><UIScript>txwip0500em02</UIScript></DR_Controller>
