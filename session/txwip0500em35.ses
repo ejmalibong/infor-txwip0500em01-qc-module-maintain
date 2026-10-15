@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DR_Controller><description>QC Cost Retest Details</description><versionID>B61O_a_ext</versionID><type>session</type><name>txwip0500em35</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-14T14:06:48Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-14T06:58:56Z</creationDateTime><createdBy>ict004</createdBy></Version><descriptionReference>txwip0500em35</descriptionReference><ControllerTableRelationship><showView>false</showView><dynIndexSwitching>1</dynIndexSwitching><IndexUsage><nrGroupFields>0</nrGroupFields><sequence>0</sequence><active>false</active><position>1</position></IndexUsage><toTable>txwip048</toTable><position>1</position><descriptionReference>txwip048</descriptionReference><description>QC Cost Retest Details</description><name>txwip048</name></ControllerTableRelationship><UIMethod><status>allowed</status><description>Webtop Enabled</description><name>webtop</name></UIMethod><UIMethod><status>notchecked</status><description>Workflow Enabled</description><name>workflow</name></UIMethod><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>1</position><description/><name>start.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>2</position><description/><name>first.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>3</position><description/><name>next.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>4</position><description/><name>prev.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>5</position><description/><name>last.view</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>6</position><description/><name>def.find</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>7</position><description/><name>find.data</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>8</position><description/><name>first.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>9</position><description/><name>next.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>10</position><description/><name>display.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>11</position><description/><name>prev.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>12</position><description/><name>rotate.curr</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>13</position><description/><name>last.set</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>14</position><description/><name>add.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>15</position><description/><name>update.db</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>16</position><description/><name>dupl.occur</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>17</position><description/><name>recover.set</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>18</position><description/><name>mark.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>19</position><description/><name>mark.occur</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>20</position><description/><name>change.order</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>21</position><description/><name>modify.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>23</position><description/><name>print.data</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>24</position><description/><name>create.job</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>25</position><description/><name>change.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>26</position><description/><name>first.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>27</position><description/><name>next.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>28</position><description/><name>prev.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>29</position><description/><name>last.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>31</position><description/><name>resize.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>32</position><description/><name>cust.grid</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>33</position><description/><name>cmd.options</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>34</position><description/><name>zoom</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>35</position><description/><name>interrupt</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>36</position><description/><name>end.program</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>37</position><description/><name>abort.program</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>39</position><description/><name>text.manager</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>40</position><description/><name>run.job</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>41</position><description/><name>global.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>42</position><description/><name>global.copy</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>43</position><description/><name>save.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>44</position><description/><name>get.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>45</position><description/><name>start.chart</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>46</position><description/><name>start.query</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>47</position><description/><name>select.all</name></StandardCommand><defaultStartCommand>false</defaultStartCommand><Form><PhysicalFormLayout><FormField><uuid>2d9ea56d-f38f-423c-9950-ae7c5e409a71</uuid><textDirection>10</textDirection><fieldAlignment>5</fieldAlignment><indexZoomSession>0</indexZoomSession><iconName/><additionalProperties2>0</additionalProperties2><additionalProperties1>1</additionalProperties1><autoEnableDisable>false</autoEnableDisable><behindEnumConstant>0</behindEnumConstant><hyperlink>false</hyperlink><searchDescription/><constantValueForYes>0</constantValueForYes><viewField>false</viewField><displayHeight>1</displayHeight><columnID>1</columnID><endXPosition>30</endXPosition><parentField>0</parentField><labelHeightOverview>1</labelHeightOverview><labelLengthOverview>999</labelLengthOverview><labelHeightDetail>1</labelHeightDetail><labelLengthDetail>20</labelLengthDetail><labelPosition>1</labelPosition><dependentOnParentField>false</dependentOnParentField><xPositionLabel>1</xPositionLabel><followUpField>0</followUpField><labelAlignment>2</labelAlignment><windowsControl>6</windowsControl><fieldBelowGrid>false</fieldBelowGrid><overviewSession>true</overviewSession><detailsSession>true</detailsSession><childFieldsBehind>false</childFieldsBehind><followUp>false</followUp><nextField>20</nextField><groupID>1</groupID><synchronizedField>false</synchronizedField><defaultValue/><inputReferenceExpression>1</inputReferenceExpression><fieldLabel>txwip048.pdno</fieldLabel><languageUnitExpression/><mandatoryInput>false</mandatoryInput><sequenceMode>10</sequenceMode><fieldLength>9</fieldLength><echoField>true</echoField><message/><defaultExpression>false</defaultExpression><zoomReturnField/><zoomProgram/><zoomType>1</zoomType><startPositionString>1</startPositionString><linkInputDigitsBefore>true</linkInputDigitsBefore><inputDigitsBefore>9</inputDigitsBefore><linkDisplayDigitsBefore>true</linkDisplayDigitsBefore><displayDigitsBefore>9</displayDigitsBefore><minimumInputLength>0</minimumInputLength><displayFormatLinked>true</displayFormatLinked><displayFormat/><fieldType>1</fieldType><domain/><element>1</element><fieldName>txwip048.pdno</fieldName><rowScreenPosition>1</rowScreenPosition><columnScreenPosition>22</columnScreenPosition><sequenceNumber>1</sequenceNumber></FormField><FormField><uuid>4c156ede-173b-41b9-8797-c7b10494f19c</uuid><textDirection>10</textDirection><fieldAlignment>5</fieldAlignment><indexZoomSession>0</indexZoomSession><iconName/><additionalProperties2>0</additionalProperties2><additionalProperties1>1</additionalProperties1><autoEnableDisable>false</autoEnableDisable><behindEnumConstant>0</behindEnumConstant><hyperlink>false</hyperlink><searchDescription/><constantValueForYes>0</constantValueForYes><viewField>false</viewField><displayHeight>1</displayHeight><columnID>1</columnID><endXPosition>30</endXPosition><parentField>0</parentField><labelHeightOverview>1</labelHeightOverview><labelLengthOverview>999</labelLengthOverview><labelHeightDetail>1</labelHeightDetail><labelLengthDetail>20</labelLengthDetail><labelPosition>1</labelPosition><dependentOnParentField>false</dependentOnParentField><xPositionLabel>1</xPositionLabel><followUpField>0</followUpField><labelAlignment>2</labelAlignment><windowsControl>6</windowsControl><fieldBelowGrid>false</fieldBelowGrid><overviewSession>true</overviewSession><detailsSession>true</detailsSession><childFieldsBehind>false</childFieldsBehind><followUp>false</followUp><nextField>30</nextField><groupID>1</groupID><synchronizedField>false</synchronizedField><defaultValue/><inputReferenceExpression>1</inputReferenceExpression><fieldLabel>txwip048.code</fieldLabel><languageUnitExpression/><mandatoryInput>false</mandatoryInput><sequenceMode>20</sequenceMode><fieldLength>9</fieldLength><echoField>true</echoField><message/><defaultExpression>false</defaultExpression><zoomReturnField/><zoomProgram/><zoomType>1</zoomType><startPositionString>1</startPositionString><linkInputDigitsBefore>true</linkInputDigitsBefore><inputDigitsBefore>9</inputDigitsBefore><linkDisplayDigitsBefore>true</linkDisplayDigitsBefore><displayDigitsBefore>9</displayDigitsBefore><minimumInputLength>0</minimumInputLength><displayFormatLinked>true</displayFormatLinked><displayFormat/><fieldType>1</fieldType><domain/><element>1</element><fieldName>txwip048.code</fieldName><rowScreenPosition>1</rowScreenPosition><columnScreenPosition>22</columnScreenPosition><sequenceNumber>2</sequenceNumber></FormField><FormField><uuid>c06114f0-00cf-4c4a-b279-5394692e3318</uuid><textDirection>10</textDirection><fieldAlignment>5</fieldAlignment><indexZoomSession>0</indexZoomSession><iconName/><additionalProperties2>0</additionalProperties2><additionalProperties1>1</additionalProperties1><autoEnableDisable>false</autoEnableDisable><behindEnumConstant>0</behindEnumConstant><hyperlink>false</hyperlink><searchDescription/><constantValueForYes>0</constantValueForYes><viewField>false</viewField><displayHeight>1</displayHeight><columnID>1</columnID><endXPosition>43</endXPosition><parentField>0</parentField><labelHeightOverview>1</labelHeightOverview><labelLengthOverview>999</labelLengthOverview><labelHeightDetail>1</labelHeightDetail><labelLengthDetail>20</labelLengthDetail><labelPosition>1</labelPosition><dependentOnParentField>false</dependentOnParentField><xPositionLabel>1</xPositionLabel><followUpField>0</followUpField><labelAlignment>2</labelAlignment><windowsControl>0</windowsControl><fieldBelowGrid>false</fieldBelowGrid><overviewSession>true</overviewSession><detailsSession>true</detailsSession><childFieldsBehind>false</childFieldsBehind><followUp>false</followUp><nextField>60</nextField><groupID>1</groupID><synchronizedField>false</synchronizedField><defaultValue/><inputReferenceExpression>1</inputReferenceExpression><fieldLabel>txwip048.dcdt</fieldLabel><languageUnitExpression/><mandatoryInput>false</mandatoryInput><sequenceMode>50</sequenceMode><fieldLength>16</fieldLength><echoField>true</echoField><message/><defaultExpression>false</defaultExpression><zoomReturnField/><zoomProgram/><zoomType>1</zoomType><startPositionString>1</startPositionString><linkInputDigitsBefore>true</linkInputDigitsBefore><inputDigitsBefore>22</inputDigitsBefore><linkDisplayDigitsBefore>true</linkDisplayDigitsBefore><displayDigitsBefore>22</displayDigitsBefore><minimumInputLength>0</minimumInputLength><displayFormatLinked>true</displayFormatLinked><displayFormat>%u002 %U002</displayFormat><fieldType>1</fieldType><domain/><element>1</element><fieldName>txwip048.dcdt</fieldName><rowScreenPosition>1</rowScreenPosition><columnScreenPosition>22</columnScreenPosition><sequenceNumber>3</sequenceNumber></FormField><FormField><uuid>18c9fb73-26fa-4432-9caf-cf8eb594db3d</uuid><textDirection>10</textDirection><fieldAlignment>5</fieldAlignment><indexZoomSession>0</indexZoomSession><iconName/><additionalProperties2>0</additionalProperties2><additionalProperties1>1</additionalProperties1><autoEnableDisable>false</autoEnableDisable><behindEnumConstant>0</behindEnumConstant><hyperlink>false</hyperlink><searchDescription/><constantValueForYes>0</constantValueForYes><viewField>false</viewField><displayHeight>1</displayHeight><columnID>1</columnID><endXPosition>43</endXPosition><parentField>0</parentField><labelHeightOverview>1</labelHeightOverview><labelLengthOverview>999</labelLengthOverview><labelHeightDetail>1</labelHeightDetail><labelLengthDetail>20</labelLengthDetail><labelPosition>1</labelPosition><dependentOnParentField>false</dependentOnParentField><xPositionLabel>1</xPositionLabel><followUpField>0</followUpField><labelAlignment>2</labelAlignment><windowsControl>0</windowsControl><fieldBelowGrid>false</fieldBelowGrid><overviewSession>true</overviewSession><detailsSession>true</detailsSession><childFieldsBehind>false</childFieldsBehind><followUp>false</followUp><nextField>0</nextField><groupID>1</groupID><synchronizedField>false</synchronizedField><defaultValue/><inputReferenceExpression>1</inputReferenceExpression><fieldLabel>txwip048.dmdt</fieldLabel><languageUnitExpression/><mandatoryInput>false</mandatoryInput><sequenceMode>60</sequenceMode><fieldLength>16</fieldLength><echoField>true</echoField><message/><defaultExpression>false</defaultExpression><zoomReturnField/><zoomProgram/><zoomType>1</zoomType><startPositionString>1</startPositionString><linkInputDigitsBefore>true</linkInputDigitsBefore><inputDigitsBefore>22</inputDigitsBefore><linkDisplayDigitsBefore>true</linkDisplayDigitsBefore><displayDigitsBefore>22</displayDigitsBefore><minimumInputLength>0</minimumInputLength><displayFormatLinked>true</displayFormatLinked><displayFormat>%u002 %U002</displayFormat><fieldType>1</fieldType><domain/><element>1</element><fieldName>txwip048.dmdt</fieldName><rowScreenPosition>1</rowScreenPosition><columnScreenPosition>22</columnScreenPosition><sequenceNumber>4</sequenceNumber></FormField><FormField><uuid>2f37ce75-5cb1-4b37-9c1e-d627539c78c6</uuid><textDirection>10</textDirection><fieldAlignment>5</fieldAlignment><indexZoomSession>0</indexZoomSession><iconName/><additionalProperties2>0</additionalProperties2><additionalProperties1>1</additionalProperties1><autoEnableDisable>false</autoEnableDisable><behindEnumConstant>0</behindEnumConstant><hyperlink>false</hyperlink><searchDescription/><constantValueForYes>0</constantValueForYes><viewField>false</viewField><displayHeight>1</displayHeight><columnID>1</columnID><endXPosition>121</endXPosition><parentField>0</parentField><labelHeightOverview>1</labelHeightOverview><labelLengthOverview>999</labelLengthOverview><labelHeightDetail>1</labelHeightDetail><labelLengthDetail>11</labelLengthDetail><labelPosition>1</labelPosition><dependentOnParentField>false</dependentOnParentField><xPositionLabel>1</xPositionLabel><followUpField>0</followUpField><labelAlignment>2</labelAlignment><windowsControl>6</windowsControl><fieldBelowGrid>false</fieldBelowGrid><overviewSession>true</overviewSession><detailsSession>true</detailsSession><childFieldsBehind>false</childFieldsBehind><followUp>false</followUp><nextField>40</nextField><groupID>1</groupID><synchronizedField>false</synchronizedField><defaultValue/><inputReferenceExpression>1</inputReferenceExpression><fieldLabel>txdpr034.desc</fieldLabel><languageUnitExpression/><mandatoryInput>false</mandatoryInput><sequenceMode>30</sequenceMode><fieldLength>100</fieldLength><echoField>true</echoField><message/><defaultExpression>false</defaultExpression><zoomReturnField/><zoomProgram/><zoomType>1</zoomType><startPositionString>1</startPositionString><linkInputDigitsBefore>true</linkInputDigitsBefore><inputDigitsBefore>100</inputDigitsBefore><linkDisplayDigitsBefore>true</linkDisplayDigitsBefore><displayDigitsBefore>100</displayDigitsBefore><minimumInputLength>0</minimumInputLength><displayFormatLinked>true</displayFormatLinked><displayFormat/><fieldType>1</fieldType><domain>tcmcs.str100</domain><element>1</element><fieldName>test.desc</fieldName><rowScreenPosition>1</rowScreenPosition><columnScreenPosition>22</columnScreenPosition><sequenceNumber>5</sequenceNumber></FormField><FormField><uuid>24d23458-414d-4a88-8777-86e2fe7aa4bf</uuid><textDirection>10</textDirection><fieldAlignment>2</fieldAlignment><indexZoomSession>0</indexZoomSession><iconName/><additionalProperties2>0</additionalProperties2><additionalProperties1>1</additionalProperties1><autoEnableDisable>false</autoEnableDisable><behindEnumConstant>0</behindEnumConstant><hyperlink>false</hyperlink><searchDescription/><constantValueForYes>0</constantValueForYes><viewField>false</viewField><displayHeight>1</displayHeight><columnID>1</columnID><endXPosition>41</endXPosition><parentField>0</parentField><labelHeightOverview>1</labelHeightOverview><labelLengthOverview>999</labelLengthOverview><labelHeightDetail>1</labelHeightDetail><labelLengthDetail>4</labelLengthDetail><labelPosition>1</labelPosition><dependentOnParentField>false</dependentOnParentField><xPositionLabel>1</xPositionLabel><followUpField>0</followUpField><labelAlignment>2</labelAlignment><windowsControl>0</windowsControl><fieldBelowGrid>false</fieldBelowGrid><overviewSession>true</overviewSession><detailsSession>true</detailsSession><childFieldsBehind>false</childFieldsBehind><followUp>false</followUp><nextField>50</nextField><groupID>1</groupID><synchronizedField>false</synchronizedField><defaultValue/><inputReferenceExpression>1</inputReferenceExpression><fieldLabel>cost</fieldLabel><languageUnitExpression/><mandatoryInput>false</mandatoryInput><sequenceMode>40</sequenceMode><fieldLength>14</fieldLength><echoField>true</echoField><message/><defaultExpression>false</defaultExpression><zoomReturnField/><zoomProgram/><zoomType>1</zoomType><startPositionString>1</startPositionString><linkInputDigitsBefore>true</linkInputDigitsBefore><inputDigitsBefore>4</inputDigitsBefore><linkDisplayDigitsBefore>true</linkDisplayDigitsBefore><displayDigitsBefore>15</displayDigitsBefore><minimumInputLength>0</minimumInputLength><displayFormatLinked>true</displayFormatLinked><displayFormat>%AQ20</displayFormat><fieldType>1</fieldType><domain>tcqiv1</domain><element>1</element><fieldName>test.cost</fieldName><rowScreenPosition>1</rowScreenPosition><columnScreenPosition>22</columnScreenPosition><sequenceNumber>6</sequenceNumber></FormField><FormGroup><selectionGroup>false</selectionGroup><parentTable/><miscellaneous>0</miscellaneous><nextToOtherGroup>false</nextToOtherGroup><checkBoxesOnly>false</checkBoxesOnly><formFormat>13</formFormat><subGroupOnNewPage>false</subGroupOnNewPage><nrSubGroups>1</nrSubGroups><firstChildGroup>0</firstChildGroup><virtualGroup>true</virtualGroup><groupAlignment>1</groupAlignment><firstField>10</firstField><nextGroup>0</nextGroup><previousGroup>0</previousGroup><parentGroup>0</parentGroup><overviewSession>true</overviewSession><detailsSession>true</detailsSession><showGroupBox>false</showGroupBox><groupHeader/><level>0</level><repeating>false</repeating><groupID>1</groupID></FormGroup></PhysicalFormLayout><FormCommand><descriptionReference>txaddmicrorestest</descriptionReference><description>Add Micro Retest</description><suppressDialogAllowed>false</suppressDialogAllowed><defaultSpecialCommand>true</defaultSpecialCommand><category>20</category><kindOfSession>9</kindOfSession><startModeSession>9</startModeSession><refreshParent>false</refreshParent><saveBeforeExecution>false</saveBeforeExecution><multipleExecution>false</multipleExecution><questionAnswer>0</questionAnswer><question><name/></question><commandAvailability>1</commandAvailability><authorizationGroup>9</authorizationGroup><initiallyHidden>false</initiallyHidden><initialHidden>false</initialHidden><showOnMenu>true</showOnMenu><showAsButton>false</showAsButton><separator>false</separator><shortcut>1</shortcut><addEllipsesToLabel>false</addEllipsesToLabel><groupFieldNr>0</groupFieldNr><parent>0</parent><activationName>load_micro_retests</activationName><activationType>5</activationType><defaultcommand>false</defaultcommand><sequence>1</sequence><position>1</position><type>1</type><shortDescription>Add Micro Retest</shortDescription><name>load_micro_retests</name></FormCommand><FormCommand><descriptionReference>txaddpychemretest</descriptionReference><description>Add Pychem Retest</description><suppressDialogAllowed>false</suppressDialogAllowed><defaultSpecialCommand>true</defaultSpecialCommand><category>25</category><kindOfSession>9</kindOfSession><startModeSession>9</startModeSession><refreshParent>false</refreshParent><saveBeforeExecution>false</saveBeforeExecution><multipleExecution>false</multipleExecution><questionAnswer>0</questionAnswer><question><name/></question><commandAvailability>1</commandAvailability><authorizationGroup>9</authorizationGroup><initiallyHidden>false</initiallyHidden><initialHidden>false</initialHidden><showOnMenu>true</showOnMenu><showAsButton>false</showAsButton><separator>false</separator><shortcut>1</shortcut><addEllipsesToLabel>false</addEllipsesToLabel><groupFieldNr>0</groupFieldNr><parent>0</parent><activationName>load_pychem_retests</activationName><activationType>5</activationType><defaultcommand>false</defaultcommand><sequence>2</sequence><position>2</position><type>1</type><shortDescription>Add Pychem Retest</shortDescription><name>load_pychem_retests</name></FormCommand><description>QC Cost Retest Details</description><name>txwip0500em35d</name><horizontal>true</horizontal><custProhibited>false</custProhibited><additionalConstraints>1</additionalConstraints><documentation/><application>EXTce01107</application></Form><DR_Module><description>QC Cost Retest Details</description><versionID>B61O_a_ext</versionID><type>library</type><name>txwip0500em35</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-14T23:20:20Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-14T06:58:10Z</creationDateTime><createdBy>ict004</createdBy></Version><Source><sourceVersion><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-14T23:20:20Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-14T06:58:10Z</creationDateTime><createdBy>ict004</createdBy></sourceVersion><sourceVersionID>B61O_a_ext</sourceVersionID><sourceObjectID>1</sourceObjectID><expression>|*******************************************************************************
+|* txwip0500em35  B61O_a_ext
+|* QC Cost Retest Details
+|* ict004
+|* 2026-10-14 [02:58]
+|*******************************************************************************
+|* Script Type: 123
+|*******************************************************************************
+
+|*************************** declaration section *******************************
+declaration:
+
+	table	ttxwip020		|* QC Costs
+	table	ttxwip021		|* Reagents	
+	table	ttxwip022		|* Reagents Details
+	table	ttxwip024		|* Micro Tests
+	table	ttxwip025		|* Micro Test Details
+	table	ttxwip026		|* QC Personnels
+	table	ttxwip027		|* Micro Test Materials
+	table	ttxwip028		|* Micro Test Reagents
+	table	ttxwip030		|* Pychem Tests
+	table	ttxwip031		|* Pychem Test Details
+	table	ttxwip033		|* Third Party Tests
+	table	ttxwip034		|* Third Party Test Details
+	table	ttxwip035 		|* QC Items
+	table	ttxwip036		|* Item Testing Costs
+	table	ttxwip037		|* Item Testing Cost Details
+	table	ttxwip038		|* Inline &amp; Documentation Costs
+	table	ttxwip039		|* Micro Test Materials Reference
+	table	ttxwip040		|* QC Cost Simulations
+	table	ttxwip041		|* Micro Retests
+	table	ttxwip042		|* Micro Retest Details
+	table	ttxwip043		|* Micro Retest Materials
+	table	ttxwip044		|* Micro Retest Reagents
+	table	ttxwip045		|* Pychem Retests
+	table	ttxwip046		|* Pychem Retest Details
+	table	ttxwip047		|* QC Cost Retests
+	table	ttxwip048		|* QC Cost Retest Details
+	table	ttxwip049		|* QC Simulation Retests
+	table	ttxwip050		|* QC Simulation Retest Details
+	
+	table	ttcibd001		|* Items
+	table	ttcibd003		|* Conversion Factors
+	table	ttdipu001		|* Item - Purchase
+	table	ttcmcs003		|* Warehouses
+	table	ttcmcs012		|* Units by Unit Set
+	table	twhltc100		|* Lots
+	table	twhltc101		|* Lot Cost Details
+	table	twhltc105		|* Lots by Warehouse
+	table	ttccom100		|* Business Partners
+	table	ttisfc001		|* Production Orders
+	table	tticpr007		|* Items - Costing
+	
+	extern domain tcmcs.str132	test.desc
+	extern domain tcqiv1		test.cost
+	extern domain tccwar		zoom.cwar
+	extern domain tcpdno		zoom.pdno
+
+|****************************** program section ********************************
+
+before.program:
+	import("txwip047.pdno", zoom.pdno)
+	
+main.table.io:
+before.write:
+	if txwip048.dcdt = 0 then
+		txwip048.dcdt = utc.num()
+	endif
+
+before.rewrite:
+	txwip048.dmdt = utc.num()
+	
+form.all:
+init.form:
+	if trim$(zoom.pdno) &lt;&gt; "" then
+		standard.commands.off(add.set, update.db, end.program)
+	endif
+
+|****************************** field section **********************************
+
+field.test.desc:
+before.display:
+	update_test_desc(txwip048.code)
+	
+field.test.cost:
+before.display:
+	update_test_cost(txwip048.code)
+	
+|****************************** function section *******************************
+
+functions:
+
+function update_test_cost(domain tcorno test.code){
+	test.cost = get_test_cost(test.code)
+}
+
+function domain tcqiv1 get_test_cost(domain tcorno test.code){
+	domain tcqiv1 cost
+	
+	cost = 0
+	
+	if str_pos(toupper$(trim$(test.code)), "M") &gt; 0 then
+		select txwip041.pyst
+		from txwip041
+		where txwip041.anly = :test.code
+		selectdo
+			cost = txwip041.pyst
+		selectempty
+			cost = 0
+		endselect
+	endif
+	
+	if str_pos(toupper$(trim$(test.code)), "P") &gt; 0 then
+		select txwip045.pyst
+		from txwip045
+		where txwip045.ptid = :test.code
+		selectdo
+			cost = txwip045.pyst
+		selectempty
+			cost = 0
+		endselect
+	endif
+	
+	return(cost)
+}
+
+function void update_test_desc(domain tcorno test.code){
+	test.desc = get_test_desc(test.code)
+}
+
+function domain tcmcs.str100 get_test_desc(domain tcorno test.code){
+	domain tcmcs.str100 desc
+	
+	desc = ""
+	
+	if str_pos(toupper$(trim$(test.code)), "M") &gt; 0 then
+		select txwip024.anly
+		from txwip024
+		where txwip024.anly = :test.code
+		selectdo
+			desc = txwip024.anly
+		selectempty
+			desc = ""
+		endselect
+	endif
+	
+	if str_pos(toupper$(trim$(test.code)), "P") &gt; 0 then
+		select txwip030.dscr
+		from txwip030
+		where txwip030.ptid = :test.code
+		selectdo
+			desc = txwip030.dscr
+		selectempty
+			desc = ""
+		endselect
+	endif
+	
+	if str_pos(toupper$(trim$(test.code)), "T") &gt; 0 then
+		select txwip033.dscr
+		from txwip033
+		where txwip033.tpid = :test.code
+		selectdo
+			desc = txwip033.dscr
+		selectempty
+			desc = ""
+		endselect
+	endif
+	
+	return(desc)
+}
+
+function extern void load_micro_retests(){
+	start.session(MODAL_OVERVIEW, "txwip0500em26",  "txwip0500em35", "")
+}
+
+function extern void load_pychem_retests(){
+	start.session(MODAL_OVERVIEW, "txwip0500em31",  "txwip0500em35", "")
+}
+</expression><expressionLanguageType>Baan4C</expressionLanguageType><sourceType>1</sourceType><sourceDescription>QC Cost Retest Details</sourceDescription><sourceName>txwip0500em35</sourceName></Source><documentation/><Attachment><type>relnotes</type><name>txwip0500em35</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em35</name></Attachment><additionalConstraints>2610</additionalConstraints><additionalInstructions/><keyword>||</keyword><application>EXTce01107</application></DR_Module><startInCompanyZero>false</startInCompanyZero><repSevLang>false</repSevLang><mainSession>true</mainSession><moduleType>1</moduleType><windowType>6</windowType><subType>1</subType><status>1</status><documentation/><Attachment><type>relnotes</type><name>txwip0500em35</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em35</name></Attachment><Attachment><type>relnotes</type><name>txwip0500em35dtest.cost</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em35dtest.cost</name></Attachment><Attachment><type>relnotes</type><name>txwip0500em35dtest.desc</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em35dtest.desc</name></Attachment><Attachment><type>relnotes</type><name>txwip0500em35dtxwip048.co</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em35dtxwip048.co</name></Attachment><Attachment><type>relnotes</type><name>txwip0500em35dtxwip048.dc</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em35dtxwip048.dc</name></Attachment><Attachment><type>relnotes</type><name>txwip0500em35dtxwip048.dm</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em35dtxwip048.dm</name></Attachment><Attachment><type>relnotes</type><name>txwip0500em35dtxwip048.pd</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em35dtxwip048.pd</name></Attachment><objectLabel/><application>EXTce01107</application><sessionReferenceDescriptionReference>txwip0500em35</sessionReferenceDescriptionReference><sessionReferenceDescription>QC Cost Retest Details</sessionReferenceDescription><sessionReference>txwip0500em35</sessionReference><UIScript>txwip0500em35</UIScript></DR_Controller>
