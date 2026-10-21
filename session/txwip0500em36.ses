@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><DR_Controller><description>Update Costs Based on Lot Price</description><versionID>B61O_a_ext</versionID><type>session</type><name>txwip0500em36</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-15T08:53:22Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-15T07:01:45Z</creationDateTime><createdBy>ict004</createdBy></Version><descriptionReference>txwip0500em36</descriptionReference><UIMethod><status>allowed</status><description>Webtop Enabled</description><name>webtop</name></UIMethod><UIMethod><status>notchecked</status><description>Workflow Enabled</description><name>workflow</name></UIMethod><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>1</position><description/><name>start.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>2</position><description/><name>first.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>3</position><description/><name>next.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>4</position><description/><name>prev.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>5</position><description/><name>last.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>6</position><description/><name>def.find</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>7</position><description/><name>find.data</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>8</position><description/><name>first.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>9</position><description/><name>next.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>10</position><description/><name>display.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>11</position><description/><name>prev.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>12</position><description/><name>rotate.curr</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>13</position><description/><name>last.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>14</position><description/><name>add.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>15</position><description/><name>update.db</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>16</position><description/><name>dupl.occur</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>17</position><description/><name>recover.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>18</position><description/><name>mark.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>19</position><description/><name>mark.occur</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>20</position><description/><name>change.order</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>21</position><description/><name>modify.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>23</position><description/><name>print.data</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>24</position><description/><name>create.job</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>25</position><description/><name>change.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>26</position><description/><name>first.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>27</position><description/><name>next.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>28</position><description/><name>prev.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>29</position><description/><name>last.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>31</position><description/><name>resize.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>32</position><description/><name>cust.grid</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>33</position><description/><name>cmd.options</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>34</position><description/><name>zoom</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>35</position><description/><name>interrupt</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>36</position><description/><name>end.program</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>37</position><description/><name>abort.program</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>39</position><description/><name>text.manager</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>40</position><description/><name>run.job</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>41</position><description/><name>global.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>42</position><description/><name>global.copy</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>43</position><description/><name>save.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>44</position><description/><name>get.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>45</position><description/><name>start.chart</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>46</position><description/><name>start.query</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>47</position><description/><name>select.all</name></StandardCommand><defaultStartCommand>false</defaultStartCommand><Form><PhysicalFormLayout/><description>Update Costs Based on Lot Price</description><name>txwip0500em36d</name><horizontal>true</horizontal><custProhibited>false</custProhibited><additionalConstraints>0</additionalConstraints><documentation/><application>EXTce01107</application></Form><DR_Module><description>Update Costs Based on Lot Price</description><versionID>B61O_a_ext</versionID><type>library</type><name>txwip0500em36</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-16T03:29:21Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-15T07:01:46Z</creationDateTime><createdBy>ict004</createdBy></Version><Source><sourceVersion><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-16T03:29:21Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-15T07:01:46Z</creationDateTime><createdBy>ict004</createdBy></sourceVersion><sourceVersionID>B61O_a_ext</sourceVersionID><sourceObjectID>1</sourceObjectID><expression>|*******************************************************************************
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><DR_Controller><description>Update Costs Based on Lot Price</description><versionID>B61O_a_ext</versionID><type>session</type><name>txwip0500em36</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-20T00:13:31Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-15T07:01:45Z</creationDateTime><createdBy>ict004</createdBy></Version><descriptionReference>txwip0500em36</descriptionReference><UIMethod><status>allowed</status><description>Webtop Enabled</description><name>webtop</name></UIMethod><UIMethod><status>notchecked</status><description>Workflow Enabled</description><name>workflow</name></UIMethod><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>1</position><description/><name>start.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>2</position><description/><name>first.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>3</position><description/><name>next.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>4</position><description/><name>prev.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>5</position><description/><name>last.view</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>6</position><description/><name>def.find</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>7</position><description/><name>find.data</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>8</position><description/><name>first.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>9</position><description/><name>next.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>10</position><description/><name>display.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>11</position><description/><name>prev.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>12</position><description/><name>rotate.curr</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>13</position><description/><name>last.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>14</position><description/><name>add.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>15</position><description/><name>update.db</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>16</position><description/><name>dupl.occur</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>17</position><description/><name>recover.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>18</position><description/><name>mark.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>19</position><description/><name>mark.occur</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>20</position><description/><name>change.order</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>21</position><description/><name>modify.set</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>23</position><description/><name>print.data</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>24</position><description/><name>create.job</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>25</position><description/><name>change.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>26</position><description/><name>first.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>27</position><description/><name>next.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>28</position><description/><name>prev.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>29</position><description/><name>last.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>31</position><description/><name>resize.frm</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>32</position><description/><name>cust.grid</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>33</position><description/><name>cmd.options</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>34</position><description/><name>zoom</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>35</position><description/><name>interrupt</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>36</position><description/><name>end.program</name></StandardCommand><StandardCommand><active>true</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>37</position><description/><name>abort.program</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>39</position><description/><name>text.manager</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>40</position><description/><name>run.job</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>41</position><description/><name>global.delete</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>42</position><description/><name>global.copy</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>43</position><description/><name>save.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>44</position><description/><name>get.defaults</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>45</position><description/><name>start.chart</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>46</position><description/><name>start.query</name></StandardCommand><StandardCommand><active>false</active><defaultcommand>false</defaultcommand><startcommand>false</startcommand><position>47</position><description/><name>select.all</name></StandardCommand><defaultStartCommand>false</defaultStartCommand><Form><PhysicalFormLayout><FormField><uuid>ff791651-1b5b-4737-adff-98098a988360</uuid><textDirection>10</textDirection><fieldAlignment>5</fieldAlignment><indexZoomSession>0</indexZoomSession><iconName/><additionalProperties2>0</additionalProperties2><additionalProperties1>1</additionalProperties1><autoEnableDisable>false</autoEnableDisable><behindEnumConstant>0</behindEnumConstant><hyperlink>false</hyperlink><searchDescription/><constantValueForYes>0</constantValueForYes><viewField>false</viewField><displayHeight>1</displayHeight><columnID>1</columnID><endXPosition>22</endXPosition><parentField>0</parentField><labelHeightOverview>1</labelHeightOverview><labelLengthOverview>0</labelLengthOverview><labelHeightDetail>1</labelHeightDetail><labelLengthDetail>0</labelLengthDetail><labelPosition>1</labelPosition><dependentOnParentField>false</dependentOnParentField><xPositionLabel>0</xPositionLabel><followUpField>0</followUpField><labelAlignment>2</labelAlignment><windowsControl>0</windowsControl><fieldBelowGrid>false</fieldBelowGrid><overviewSession>false</overviewSession><detailsSession>true</detailsSession><childFieldsBehind>false</childFieldsBehind><followUp>false</followUp><nextField>0</nextField><groupID>1</groupID><synchronizedField>false</synchronizedField><defaultValue/><inputReferenceExpression>1</inputReferenceExpression><fieldLabel/><languageUnitExpression/><mandatoryInput>false</mandatoryInput><sequenceMode>10</sequenceMode><fieldLength>16</fieldLength><echoField>true</echoField><message/><defaultExpression>false</defaultExpression><zoomReturnField/><zoomProgram/><zoomType>1</zoomType><startPositionString>1</startPositionString><linkInputDigitsBefore>true</linkInputDigitsBefore><inputDigitsBefore>22</inputDigitsBefore><linkDisplayDigitsBefore>true</linkDisplayDigitsBefore><displayDigitsBefore>22</displayDigitsBefore><minimumInputLength>0</minimumInputLength><displayFormatLinked>false</displayFormatLinked><displayFormat>%u002</displayFormat><fieldType>1</fieldType><domain>tcdate</domain><element>1</element><fieldName>date.now</fieldName><rowScreenPosition>1</rowScreenPosition><columnScreenPosition>1</columnScreenPosition><sequenceNumber>1</sequenceNumber></FormField><FormGroup><selectionGroup>false</selectionGroup><parentTable/><miscellaneous>0</miscellaneous><nextToOtherGroup>false</nextToOtherGroup><checkBoxesOnly>false</checkBoxesOnly><formFormat>13</formFormat><subGroupOnNewPage>false</subGroupOnNewPage><nrSubGroups>1</nrSubGroups><firstChildGroup>0</firstChildGroup><virtualGroup>true</virtualGroup><groupAlignment>1</groupAlignment><firstField>10</firstField><nextGroup>0</nextGroup><previousGroup>0</previousGroup><parentGroup>0</parentGroup><overviewSession>false</overviewSession><detailsSession>true</detailsSession><showGroupBox>false</showGroupBox><groupHeader/><level>0</level><repeating>false</repeating><groupID>1</groupID></FormGroup></PhysicalFormLayout><description>Update Costs Based on Lot Price</description><name>txwip0500em36d</name><horizontal>true</horizontal><custProhibited>false</custProhibited><additionalConstraints>1</additionalConstraints><documentation/><application>EXTce01107</application></Form><DR_Module><description>Update Costs Based on Lot Price</description><versionID>B61O_a_ext</versionID><type>library</type><name>txwip0500em36</name><Version><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-20T00:14:45Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-15T07:01:46Z</creationDateTime><createdBy>ict004</createdBy></Version><Source><sourceVersion><ObjectID/><classID/><checkInLabel/><documentation/><isExpired>no</isExpired><isCheckedOutParallel>no</isCheckedOutParallel><isCheckedOut>no</isCheckedOut><modificationDateTime>2026-10-20T00:14:45Z</modificationDateTime><modifiedBy>ict004</modifiedBy><creationDateTime>2026-10-15T07:01:46Z</creationDateTime><createdBy>ict004</createdBy></sourceVersion><sourceVersionID>B61O_a_ext</sourceVersionID><sourceObjectID>1</sourceObjectID><expression>|*******************************************************************************
 |* txwip0500em36  B61O_a_ext
 |* Update Costs Based on Lot Price
 |* ict004
@@ -49,6 +49,8 @@ declaration:
 	table	ttisfc001		|* Production Orders
 	table	tticpr007		|* Items - Costing
 	table	twhinr140		|* Inventory
+	
+	extern domain tcdate		date.now
 
 |****************************** program section ********************************
 
@@ -63,13 +65,30 @@ init.group:
 
 choice.run.job:
 before.choice:
-	update_reagent_costs()
+	update_all_lot_price_costs()
 	
 |****************************** function section *******************************
 
 functions:
 
-| Update Reagent Details
+function extern update_all_lot_price_costs(){
+	update_reagent_costs()
+|	update_micro_test_material_references()
+|	update_pychem_material_costs()
+|	update_micro_test_cost_totals()
+|	update_pychem_test_cost_totals()
+|	update_current_item_testing_costs()
+
+	message("Current QC costing records have been recalculated.")
+}
+
+|*******************************************************************************
+|* 1. Recalculate reagent detail costs and reagent totals.
+|*
+|* Uses the existing validated compute_param_cost(), which calls
+|* get_item_lot_price() or get_item_standard_cost() according to the
+|* existing parameter type and item category rules.
+|*******************************************************************************
 
 function extern update_reagent_costs(){
 	domain tcqiv1 rgst.cost, slst.cost
@@ -89,7 +108,10 @@ function extern update_reagent_costs(){
 			txwip022.slst = compute_param_cost(txwip021.cwar, txwip022.sltp, txwip022.slvn, txwip022.svol, txwip022.slni)
 			rgst.cost = rgst.cost + txwip022.rgst
 			slst.cost = slst.cost + txwip022.slst
-			db.update(ttxwip022, db.retry)
+			if db.update(ttxwip022, db.retry) &lt;&gt; 0 then
+				message("Error updating reagent detail costs.")
+				abort.transaction()
+			endif
 		endselect
 		
 		txwip021.ttst = rgst.cost + slst.cost
@@ -105,6 +127,545 @@ function extern update_reagent_costs(){
 		db.update(ttxwip021, db.retry)
 		commit.transaction()
 	endselect
+}
+
+|*******************************************************************************
+|* 2. Refresh the shared micro-test material reference and its existing
+|*    normal-test and retest material copies.
+|*
+|* txwip039.prip = current lot price.
+|* txwip039.csst = current cost for the configured test quantity.
+|* txwip027 and txwip043 are refreshed from the corresponding reference.
+|*******************************************************************************
+
+function extern update_micro_test_material_references(){
+	domain tcqiv1 cost.per.testing
+	domain tccopr lot.price
+	domain tcconv conversion.value
+
+	select txwip039.*
+	from txwip039 for update
+	selectdo
+		lot.price = get_item_lot_price(txwip039.item, txwip039.cwar)
+		conversion.value = get_conversion_value(txwip039.item, txwip039.cuni)
+
+		cost.per.testing = 0
+
+		if conversion.value &lt;&gt; 0 then
+			cost.per.testing = lot.price / conversion.value * txwip039.tsmm
+		endif
+
+		txwip039.prip = lot.price
+		txwip039.csst = cost.per.testing
+
+		if db.update(ttxwip039, db.retry) &lt;&gt; 0 then
+			message("Error updating micro-test material references.")
+			abort.transaction()
+		endif
+
+		| Refresh existing normal micro-test material copies.
+		select txwip027.*
+		from txwip027 for update
+		where txwip027.item = :txwip039.item
+		selectdo
+			txwip027.prip = txwip039.prip
+			txwip027.csst = txwip039.csst
+
+			if db.update(ttxwip027, db.retry) &lt;&gt; 0 then
+				message("Error updating micro-test material costs.")
+				abort.transaction()
+			endif
+		endselect
+
+		| Refresh existing micro-test retest material copies.
+		select txwip043.*
+		from txwip043 for update
+		where txwip043.item = :txwip039.item
+		selectdo
+			txwip043.prip = txwip039.prip
+			txwip043.csst = txwip039.csst
+
+			if db.update(ttxwip043, db.retry) &lt;&gt; 0 then
+				message("Error updating micro-test retest material costs.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	commit.transaction()
+}
+
+|*******************************************************************************
+|* 3. Recalculate Pychem material details and Pychem retest material details.
+|*
+|* The calculation follows the existing txwip0500em17 / txwip0500em33 rules:
+|*   Type 1: standard cost for FG/SFG/RM/FG/RM, otherwise lot price.
+|*   Type 2: reagent cost per sample.
+|*   Type 3: configured QC-item price.
+|*
+|* Conversion is retained from the existing Pychem calculation convention.
+|*******************************************************************************
+
+function extern update_pychem_material_costs(){
+	domain tcqiv1 material.cost
+	domain tccwar cwar
+
+	select txwip030.ptid, txwip030.cwar
+	from txwip030
+	selectdo
+		cwar = txwip030.cwar
+
+		select txwip031.*
+		from txwip031 for update
+		where txwip031.ptid = :txwip030.ptid
+		selectdo
+			material.cost = compute_qc_material_cost(txwip031.mttp, txwip031.mtrl, txwip031.aqsm, cwar)
+			txwip031.mcst = material.cost
+
+			if db.update(ttxwip031, db.retry) &lt;&gt; 0 then
+				message("Error updating Pychem material costs.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	| Refresh retest material details separately.
+	select txwip045.ptid, txwip045.cwar
+	from txwip045
+	selectdo
+		cwar = txwip045.cwar
+
+		select txwip046.*
+		from txwip046 for update
+		where txwip046.ptid = :txwip045.ptid
+		selectdo
+			material.cost = compute_qc_material_cost(txwip031.mttp, txwip031.mtrl, txwip031.aqsm, cwar)
+			txwip046.mcst = material.cost
+
+			if db.update(ttxwip046, db.retry) &lt;&gt; 0 then
+				message("Error updating Pychem retest material costs.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	commit.transaction()
+}
+
+|*******************************************************************************
+|* Calculate Pychem material cost using the existing costing rules.
+|*******************************************************************************
+
+function domain tcqiv1 compute_qc_material_cost(domain txmat.types type, domain tcmcs.str50 param, domain tiqcp1 quantity, domain tccwar cwar){
+	domain tcqiv1 total, cost.per.testing
+	domain tccopr item.price
+	domain tcconv conversion.value
+	domain tcitem format.item
+
+	total = 0
+	item.price = 0
+	conversion.value = 0
+	cost.per.testing = 0
+
+	on case etol(type)
+		case 1:
+			format.item = "         " &amp; trim$(param)
+
+			select tcibd001.item
+			from tcibd001
+			where tcibd001.item = :format.item
+				and tcibd001.citg IN ("FG", "SFG", "RM/FG", "RM")
+			selectdo
+				item.price = get_item_standard_cost(format.item)
+				conversion.value = 1000
+
+				if conversion.value &lt;&gt; 0 then
+					cost.per.testing = item.price / conversion.value
+					total = cost.per.testing * quantity
+				endif
+			selectempty
+				conversion.value = get_conversion_value(format.item, "")
+				item.price = get_item_lot_price(format.item, cwar)
+
+				if conversion.value &lt;&gt; 0 then
+					cost.per.testing = item.price / conversion.value
+					total = cost.per.testing * quantity
+				endif
+			endselect
+			break
+
+		case 2:
+			format.item = trim$(param)
+
+			select txwip021.csst
+			from txwip021
+			where txwip021.rgnt = :format.item
+			as set with 1 rows
+			selectdo
+				total = quantity * txwip021.csst
+			endselect
+			break
+
+		case 3:
+			format.item = trim$(param)
+
+			select txwip035.prip
+			from txwip035
+			where txwip035.qitm = :format.item
+			as set with 1 rows
+			selectdo
+				total = txwip035.prip
+			endselect
+			break
+
+		default:
+			total = 0
+	endcase
+
+	return(total)
+}
+
+|*******************************************************************************
+|* 4. Refresh current micro-test and micro-test-retest totals.
+|*
+|* This recalculates only the current reusable test definitions. It does not
+|* write the QC cost, simulation, retest, or retest-detail snapshot tables.
+|*******************************************************************************
+
+function extern update_micro_test_cost_totals(){
+	domain tcqiv1 material.cost, labor.cost, total.cost
+
+	| Normal micro-test detail totals.
+	select txwip025.mtid, txwip025.anly
+	from txwip025
+	where txwip025.prmt = 2
+	selectdo
+		material.cost = compute_micro_material_total(txwip025.mtid)
+
+		select txwip025.*
+		from txwip025 for update
+		where txwip025.mtid = :txwip025.mtid
+		selectdo
+			txwip025.mcst = material.cost
+
+			if db.update(ttxwip025, db.retry) &lt;&gt; 0 then
+				message("Error updating micro-test detail totals.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	| Normal micro-test header totals.
+	select txwip024.anly
+	from txwip024
+	selectdo
+		labor.cost = 0
+		material.cost = 0
+
+		select sum(txwip025.lbst):labor.cost,
+			sum(txwip025.mcst):material.cost
+		from txwip025
+		where txwip025.anly = :txwip024.anly
+		selectdo
+		endselect
+
+		total.cost = labor.cost + material.cost
+
+		select txwip024.*
+		from txwip024 for update
+		where txwip024.anly = :txwip024.anly
+		selectdo
+			txwip024.tlst = labor.cost
+			txwip024.tmst = material.cost
+			txwip024.pyst = total.cost
+
+			if db.update(ttxwip024, db.retry) &lt;&gt; 0 then
+				message("Error updating micro-test header totals.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	| Retest material detail totals.
+	select txwip042.mtid, txwip042.anly
+	from txwip042
+	where txwip042.prmt = 2
+	selectdo
+		material.cost = compute_micro_retest_material_total(txwip042.mtid)
+
+		select txwip042.*
+		from txwip042 for update
+		where txwip042.mtid = :txwip042.mtid
+		selectdo
+			txwip042.mcst = material.cost
+
+			if db.update(ttxwip042, db.retry) &lt;&gt; 0 then
+				message("Error updating micro-test retest detail totals.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	| Retest micro-test header totals.
+	select txwip041.anly
+	from txwip041
+	selectdo
+		labor.cost = 0
+		material.cost = 0
+
+		select sum(txwip042.lbst):labor.cost,
+			sum(txwip042.mcst):material.cost
+		from txwip042
+		where txwip042.anly = :txwip041.anly
+		selectdo
+		endselect
+
+		total.cost = labor.cost + material.cost
+
+		select txwip041.*
+		from txwip041 for update
+		where txwip041.anly = :txwip041.anly
+		selectdo
+			txwip041.tlst = labor.cost
+			txwip041.tmst = material.cost
+			txwip041.pyst = total.cost
+
+			if db.update(ttxwip041, db.retry) &lt;&gt; 0 then
+				message("Error updating micro-test retest totals.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	commit.transaction()
+}
+
+|*******************************************************************************
+|* Current micro-test material + reagent total.
+|*******************************************************************************
+
+function domain tcqiv1 compute_micro_material_total(domain tcmcs.long mtid){
+	domain tcqiv1 total.mat.cost, total.rgt.cost, total
+
+	total.mat.cost = 0
+	total.rgt.cost = 0
+	total = 0
+
+	select sum(txwip027.csst):total.mat.cost
+	from txwip027
+	where txwip027.mtid = :mtid
+	selectdo
+	endselect
+
+	select txwip021.rgnt, txwip021.cssm
+	from txwip021
+	where exists
+		(select txwip028.rgnt
+		 from txwip028
+		 where txwip028.mtid = :mtid
+			and txwip028.rgnt = txwip021.rgnt)
+	selectdo
+		total.rgt.cost = total.rgt.cost + txwip021.cssm
+	endselect
+
+	total = total.mat.cost + total.rgt.cost
+
+	return(total)
+}
+
+|*******************************************************************************
+|* Current micro-test retest material + reagent total.
+|*******************************************************************************
+
+function domain tcqiv1 compute_micro_retest_material_total(domain tcmcs.long mtid){
+	domain tcqiv1 total.mat.cost, total.rgt.cost, total
+
+	total.mat.cost = 0
+	total.rgt.cost = 0
+	total = 0
+
+	select sum(txwip043.csst):total.mat.cost
+	from txwip043
+	where txwip043.mtid = :mtid
+	selectdo
+	endselect
+
+	select txwip021.rgnt, txwip021.cssm
+	from txwip021
+	where exists
+		(select txwip044.rgnt
+		 from txwip044
+		 where txwip044.mtid = :mtid
+			and txwip044.rgnt = txwip021.rgnt)
+	selectdo
+		total.rgt.cost = total.rgt.cost + txwip021.cssm
+	endselect
+
+	total = total.mat.cost + total.rgt.cost
+
+	return(total)
+}
+
+|*******************************************************************************
+|* 5. Refresh current Pychem test and Pychem-retest totals.
+|*******************************************************************************
+
+function extern update_pychem_test_cost_totals(){
+	domain tcqiv1 material.cost, labor.cost, total.cost
+
+	select txwip030.ptid
+	from txwip030
+	selectdo
+		material.cost = 0
+		labor.cost = txwip030.tlst
+
+		select sum(txwip031.mcst):material.cost
+		from txwip031
+		where txwip031.ptid = :txwip030.ptid
+		selectdo
+		endselect
+
+		total.cost = labor.cost + material.cost
+
+		select txwip030.*
+		from txwip030 for update
+		where txwip030.ptid = :txwip030.ptid
+		selectdo
+			txwip030.tmst = material.cost
+			txwip030.pyst = total.cost
+
+			if db.update(ttxwip030, db.retry) &lt;&gt; 0 then
+				message("Error updating Pychem test totals.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	select txwip045.ptid
+	from txwip045
+	selectdo
+		material.cost = 0
+		labor.cost = txwip045.tlst
+
+		select sum(txwip046.mcst):material.cost
+		from txwip046
+		where txwip046.ptid = :txwip045.ptid
+		selectdo
+		endselect
+
+		total.cost = labor.cost + material.cost
+
+		select txwip045.*
+		from txwip045 for update
+		where txwip045.ptid = :txwip045.ptid
+		selectdo
+			txwip045.tmst = material.cost
+			txwip045.pyst = total.cost
+
+			if db.update(ttxwip045, db.retry) &lt;&gt; 0 then
+				message("Error updating Pychem retest totals.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	commit.transaction()
+}
+
+|*******************************************************************************
+|* 6. Refresh current QC item testing totals.
+|*
+|* The component tests have already been recalculated above. This refreshes
+|* the current item-testing aggregates that consume those test costs.
+|*
+|* Historical QC cost and simulation snapshots are not touched.
+|*******************************************************************************
+
+function extern update_current_item_testing_costs(){
+	domain tcqiv1 micro.cost, pychem.cost, annual.cost, third.party.cost
+
+	select txwip036.item, txwip036.cwar
+	from txwip036
+	selectdo
+		micro.cost = 0
+		pychem.cost = 0
+		annual.cost = 0
+		third.party.cost = 0
+
+		| Per-batch micro tests.
+		select txwip024.anly, txwip024.pyst
+		from txwip024
+		where txwip024.freq = 2
+			and exists
+			(select txwip037.code
+			 from txwip037
+			 where txwip037.code = txwip024.anly
+				and txwip037.item = :txwip036.item
+				and txwip037.cwar = :txwip036.cwar)
+		selectdo
+			micro.cost = micro.cost + txwip024.pyst
+		endselect
+
+		| Pychem tests.
+		select txwip030.ptid, txwip030.pyst
+		from txwip030
+		where exists
+			(select txwip037.code
+			 from txwip037
+			 where txwip037.code = txwip030.ptid
+				and txwip037.item = :txwip036.item
+				and txwip037.cwar = :txwip036.cwar)
+		selectdo
+			pychem.cost = pychem.cost + txwip030.pyst
+		endselect
+
+		| Annual micro tests.
+		select txwip024.anly, txwip024.pyst
+		from txwip024
+		where txwip024.freq = 1
+			and exists
+			(select txwip037.code
+			 from txwip037
+			 where txwip037.code = txwip024.anly
+				and txwip037.item = :txwip036.item
+				and txwip037.cwar = :txwip036.cwar)
+		selectdo
+			annual.cost = annual.cost + txwip024.pyst
+		endselect
+
+		| Third-party test costs are not recalculated from lot price.
+		| Preserve the existing aggregation behavior.
+		select txwip033.tpid, txwip033.tpst
+		from txwip033
+		where exists
+			(select txwip037.code
+			 from txwip037
+			 where txwip037.code = txwip033.tpid
+				and txwip037.item = :txwip036.item
+				and txwip037.cwar = :txwip036.cwar)
+		selectdo
+			third.party.cost = third.party.cost + txwip033.tpst
+		endselect
+
+		select txwip036.*
+		from txwip036 for update
+		where txwip036.item = :txwip036.item
+			and txwip036.cwar = :txwip036.cwar
+		as set with 1 rows
+		selectdo
+			txwip036.mtst = micro.cost
+			txwip036.pyst = pychem.cost
+			txwip036.amst = annual.cost
+			txwip036.atst = third.party.cost
+
+			if db.update(ttxwip036, db.retry) &lt;&gt; 0 then
+				message("Error updating current QC item testing costs.")
+				abort.transaction()
+			endif
+		endselect
+	endselect
+
+	commit.transaction()
 }
 
 function domain tcqiv1 compute_param_cost(domain tccwar cwar, domain txmat.types type, domain tcmcs.str50 param, domain tiqcp1 vol, domain tccuni unit){
@@ -262,4 +823,4 @@ function domain tccopr get_item_lot_price(domain tcitem item, domain tccwar cwar
 	endselect
 
 	return(item.lot.price)
-}</expression><expressionLanguageType>Baan4C</expressionLanguageType><sourceType>1</sourceType><sourceDescription>Update Costs Based on Lot Price</sourceDescription><sourceName>txwip0500em36</sourceName></Source><documentation/><Attachment><type>relnotes</type><name>txwip0500em36</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em36</name></Attachment><additionalConstraints>2610</additionalConstraints><additionalInstructions/><keyword>||</keyword><application>EXTce01107</application></DR_Module><startInCompanyZero>false</startInCompanyZero><repSevLang>false</repSevLang><mainSession>true</mainSession><moduleType>1</moduleType><windowType>3</windowType><subType>2</subType><status>1</status><documentation/><Attachment><type>relnotes</type><name>txwip0500em36</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em36</name></Attachment><objectLabel/><application>EXTce01107</application><sessionReferenceDescriptionReference>txwip0500em36</sessionReferenceDescriptionReference><sessionReferenceDescription>Update Costs Based on Lot Price</sessionReferenceDescription><sessionReference>txwip0500em36</sessionReference><UIScript>txwip0500em36</UIScript></DR_Controller>
+}</expression><expressionLanguageType>Baan4C</expressionLanguageType><sourceType>4</sourceType><sourceDescription>Update Costs Based on Lot Price</sourceDescription><sourceName>txwip0500em36</sourceName></Source><documentation/><Attachment><type>relnotes</type><name>txwip0500em36</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em36</name></Attachment><additionalConstraints>2610</additionalConstraints><additionalInstructions/><keyword>||</keyword><application>EXTce01107</application></DR_Module><startInCompanyZero>false</startInCompanyZero><repSevLang>false</repSevLang><mainSession>true</mainSession><moduleType>1</moduleType><windowType>3</windowType><subType>2</subType><status>1</status><documentation/><Attachment><type>relnotes</type><name>txwip0500em36</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em36</name></Attachment><Attachment><type>relnotes</type><name>txwip0500em36ddate.now</name></Attachment><Attachment><type>techdoc</type><name>txwip0500em36ddate.now</name></Attachment><objectLabel/><application>EXTce01107</application><sessionReferenceDescriptionReference>txwip0500em36</sessionReferenceDescriptionReference><sessionReferenceDescription>Update Costs Based on Lot Price</sessionReferenceDescription><sessionReference>txwip0500em36</sessionReference><UIScript>txwip0500em36</UIScript></DR_Controller>
