@@ -221,8 +221,6 @@ selection.filter:
 when.field.changes:
 	update_reagent_cost(txwip022.rgtp, txwip022.item, txwip022.rvol, txwip022.rgni)
 	
-after.field:
-	update_reagent_cost(txwip022.rgtp, txwip022.item, txwip022.rvol, txwip022.rgni)
 	
 field.txwip022.sltp:
 when.field.changes:
