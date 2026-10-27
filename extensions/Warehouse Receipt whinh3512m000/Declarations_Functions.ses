@@ -1,0 +1,89 @@
+|global declarations for extension script.
+table ttxwip001 | Safety Stock - Inventory
+table ttxwip002 | Safety Stock - Inventory Transactions
+table ttxwip003 | MRP - Purchase Order Link
+table twhinh312 | Warehouse Receipt Lines
+table ttxwip051 | Inventory
+
+domain  tcitem  line.item       | Item
+domain  tcrqno  po.no           | Purchase Order Number
+
+|common functions to be used in extension script.
+function domain tcyesno generated_from_MRP() {
+	domain tcyesno result
+
+	result = tcyesno.no
+
+	select *
+	from txwip003
+	where txwip003.prno = :po.no
+	        and txwip003.item = :line.item
+	selectdo
+	        result = tcyesno.yes
+	selectempty
+	        result = tcyesno.no
+	endselect
+	
+        return(result)
+}
+
+
+function domain tcyesno po_item_exist() {
+	domain tcyesno result
+
+	result = tcyesno.no
+	
+	
+	| check if item and po already exist in table txwip002 - Safety Stock - Inventory Transactions
+        | to avoid negative safety stock on order, assume 1 PO - item is 1 warehouse receipt line only
+	select txwip002.trid
+	from txwip002
+        where txwip002.item = :line.item
+                and txwip002.rmks = :po.no
+	as set with 1 rows
+	selectdo
+                result = tcyesno.yes
+	selectempty
+	        result = tcyesno.no
+	endselect      
+
+        return(result)
+}
+
+function domain tcyesno is_qc_item(domain tcitem item){
+        domain tcyesno result
+        
+        result = tcyesno.no
+        
+        select tcibd001.item
+        from tcibd001
+        where tcibd001.item = :item
+         and tcibd001.citg = "600"
+        as set with 1 rows
+        selectdo
+                result = tcyesno.yes
+        selectempty
+                result = tcyesno.no
+        endselect
+        
+        return(result)
+}
+
+function domain tcmcs.long get_next_id(){
+        domain tcmcs.long next.id
+        
+        next.id = 0
+        
+        select txwip051.inid
+        from txwip051
+        order by txwip051.inid desc
+        as set with 1 rows
+        selectdo
+                next.id = txwip051.inid + 1
+        selectempty
+                next.id = 1
+        endselect
+        
+        return(next.id)
+                
+}

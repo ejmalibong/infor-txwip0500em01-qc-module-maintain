@@ -1,0 +1,142 @@
+|* Hook: After Command
+|* Use this hook to perform actions after the 
+|* command is executed. 
+
+function extern void function.option.confirm.receipt.after.command()
+{
+        long    trans.count
+        domain  tcrqno  trans.ref
+        domain  tcrqno  trans.seq
+        domain  tcrqno  trans.id
+        domain  tcqiv1  line.qty
+        domain  tcmcs.str50 format.item
+        
+        domain  tcmcs.str16 sess.name
+        
+        | Initialize
+        line.item = ""
+        po.no = ""
+        line.qty = 0
+        trans.count = 0
+        trans.ref = ""
+        get.var (pid, "prog.name$", sess.name)
+        
+        format.item = ""
+  
+        | Warehouse Receipt Lines
+        select whinh312.*
+        from whinh312
+        where whinh312.rcno = :whinh310.rcno
+        selectdo
+                line.item = whinh312.item
+                po.no = whinh312.orno           | Purchase Order Number
+                trans.ref = whinh312.rcno       | Receipt Number
+
+                if generated_from_MRP() = tcyesno.yes 
+                        and po_item_exist() = tcyesno.no then                
+                        
+                        | Get the safety stock quantity
+                        select *
+                        from txwip003
+                        where txwip003.prno = :whinh312.orno
+                                and txwip003.item = :whinh312.item
+                        selectdo
+                                line.qty = txwip003.sftk
+                        endselect
+
+                        | get the last inserted ID, otherwise default value 
+                	select txwip002.trid
+                	from txwip002
+                	order by txwip002.trid desc
+                	as set with 1 rows
+                	selectdo
+                		trans.seq = txwip002.trid
+                		trans.count = val(trans.seq) + 1
+                		trans.id = sprintf$("%09d", strip$(str$(trans.count)))
+                	selectempty
+                		trans.id = "000000001"
+                	endselect        
+
+                        | Insert to Safety Stock - Inventory Transactions
+         		db.set.to.default(ttxwip002)
+                        txwip002.trid = trans.id
+                        txwip002.item = line.item
+                        txwip002.iqty = line.qty
+                        txwip002.dtbl = ltoe(1)       | 1 - On Hand , 2 - On Order
+                        txwip002.ttyp = ltoe(1)       | 1 - Add , 2 - Subtract
+                        txwip002.ssnm = sess.name
+                        txwip002.strn = trans.ref
+                        txwip002.rmks = ""
+                        txwip002.user = logname$
+                        txwip002.trdt = utc.num()                
+        		db.insert(ttxwip002,db.retry)
+        		
+        		
+        		db.set.to.default(ttxwip001)
+        		| Update Safety Stock - Inventory (Add to On-Hand)
+                        select txwip001.*
+                        from txwip001 for update
+                        where txwip001.item = :line.item
+                        selectdo
+                                txwip001.qhnd = txwip001.qhnd + line.qty
+                                db.update(ttxwip001,db.retry)
+                        endselect
+
+                        db.set.to.default(ttxwip001)
+        		| Update Safety Stock - Inventory (Subtract from On-Order)
+                        select txwip001.*
+                        from txwip001 for update
+                        where txwip001.item = :line.item
+                        selectdo
+                                txwip001.qord = txwip001.qord - line.qty
+                                db.update(ttxwip001,db.retry)
+                        endselect	                        
+        	endif                
+        endselect
+        
+        | QC Custom Inventory
+        | Warehouse Receipt Lines
+        select whinh312.*
+        from whinh312
+        where whinh312.rcno = :whinh310.rcno
+        selectdo
+                format.item = trim$(whinh312.item)
+                
+                | Validate from Item Master if QC item
+                if is_qc_item(whinh312.item) = tcyesno.yes then
+                
+                        | Skip if exists from Inventory
+                        select txwip051.*
+                        from txwip051 for update
+                        where txwip051.rcno = :whinh312.rcno
+                                and txwip051.rcln = :whinh312.rcln
+                                and txwip051.pono = :whinh312.pono
+                                and txwip051.item = :format.item
+                                and txwip051.cwar = :whinh312.cwar
+                        as set with 1 rows
+                        selectdo
+                                message("Receipt line already exists in QC inventory")
+                        selectempty
+                                txwip051.inid = get_next_id()
+                                txwip051.ittp = ltoe(1)               | Item
+                                txwip051.item = trim$(whinh312.item)
+                                txwip051.cwar = whinh312.cwar
+                                txwip051.loca = whinh312.dslo  | Location - Location
+                                txwip051.clot = whinh312.clot
+                                txwip051.rcno = whinh312.rcno
+                                txwip051.rcln = whinh312.rcln
+                                txwip051.pono = whinh312.pono
+                                txwip051.idat = whinh312.ardt  | Inventory Date - Actual Receipt Date
+                                txwip051.expd = whinh312.idat  | Expiry Date - Inventory Date
+                                txwip051.cuni = whinh312.rcun  | Received Unit - Receipt Unit
+                                txwip051.qhnd = whinh312.qrcr  | Received Qty - Received Qty
+                                txwip051.qblk = 0               | Blocked Qty
+                                txwip051.qava = whinh312.qrcr  | Available Qty
+                                txwip051.dcdt = utc.num()
+                                db.insert(ttxwip051, db.retry)
+                                commit.transaction()
+                        endselect
+                        
+                endif
+        endselect
+}
