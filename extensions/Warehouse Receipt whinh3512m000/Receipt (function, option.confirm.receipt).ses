@@ -1,9 +1,4 @@
-|* Hook: After Command
-|* Use this hook to perform actions after the 
-|* command is executed. 
-
-function extern void function.option.confirm.receipt.after.command()
-{
+function extern void function.option.confirm.receipt.after.command(){
         long    trans.count
         domain  tcrqno  trans.ref
         domain  tcrqno  trans.seq
@@ -71,7 +66,6 @@ function extern void function.option.confirm.receipt.after.command()
                         txwip002.trdt = utc.num()                
         		db.insert(ttxwip002,db.retry)
         		
-        		
         		db.set.to.default(ttxwip001)
         		| Update Safety Stock - Inventory (Add to On-Hand)
                         select txwip001.*
@@ -99,11 +93,14 @@ function extern void function.option.confirm.receipt.after.command()
         select whinh312.*
         from whinh312
         where whinh312.rcno = :whinh310.rcno
+                and whinh312.oorg = 72 | Origin: Transfer (Manual)
         selectdo
                 format.item = trim$(whinh312.item)
                 
-                | Validate from Item Master if QC item
-                if is_qc_item(whinh312.item) = tcyesno.yes then
+                | Validate from Item Master if QC item and
+                | if receiving location is QC
+                if is_qc_item(whinh312.item) = tcyesno.yes and
+                        is_qc_cwar_loca(whinh312.cwar, whinh312.dslo) = tcyesno.yes then
                 
                         | Skip if exists from Inventory
                         select txwip051.*
@@ -115,13 +112,13 @@ function extern void function.option.confirm.receipt.after.command()
                                 and txwip051.cwar = :whinh312.cwar
                         as set with 1 rows
                         selectdo
-                                message("Receipt line already exists in QC inventory")
+                                message("Receipt line already exists in QC Inventory.")
                         selectempty
                                 txwip051.inid = get_next_id()
-                                txwip051.ittp = ltoe(1)               | Item
+                                txwip051.ittp = ltoe(1) | Item Type: Item
                                 txwip051.item = trim$(whinh312.item)
                                 txwip051.cwar = whinh312.cwar
-                                txwip051.loca = whinh312.dslo  | Location - Location
+                                txwip051.loca = whinh312.dslo | Location
                                 txwip051.clot = whinh312.clot
                                 txwip051.rcno = whinh312.rcno
                                 txwip051.rcln = whinh312.rcln
@@ -130,11 +127,13 @@ function extern void function.option.confirm.receipt.after.command()
                                 txwip051.expd = whinh312.idat  | Expiry Date - Inventory Date
                                 txwip051.cuni = whinh312.rcun  | Received Unit - Receipt Unit
                                 txwip051.qhnd = whinh312.qrcr  | Received Qty - Received Qty
-                                txwip051.qblk = 0               | Blocked Qty
+                                txwip051.qblk = 0              | Blocked Qty
                                 txwip051.qava = whinh312.qrcr  | Available Qty
                                 txwip051.dcdt = utc.num()
                                 db.insert(ttxwip051, db.retry)
                                 commit.transaction()
+                                
+                                message("Item " & whinh312.item & " successfully added to QC Inventory.")
                         endselect
                         
                 endif
