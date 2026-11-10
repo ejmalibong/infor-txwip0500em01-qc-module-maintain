@@ -1,0 +1,30 @@
+    table                       ttcmcs003       |* Warehouses
+    table                       ttxwip024       |* Micro Tests
+    table                       ttxwip025       |* Micro Test Details
+    table                       ttxwip027       |* Micro Test Materials
+    table                       ttxwip030       |* Pychem Tests
+    table                       ttxwip031       |* Pychem Test Details
+    table                       ttxwip037       |* Item Testing Cost Details
+    table                       ttxwip051       |* QC Inventory
+    table                       ttxwip052       |* QC Inventory Details
+    table                       ttcibd003       |* Item Conversion Factors
+    table                       twhltc101       |* Lot Cost Details
+    table                       twhinh211       |* Warehouse Inspection
+    table                       ttisfc001       |* Production Orders
+    table                       ttcibd001       |* Items
+
+    extern domain tccwar        qc.warehouse
+    extern domain whloca        qc.location
+    extern domain tcitem        inspected.item, formatted.item
+    extern domain tcorno        inspection.number
+    extern domain tcpono        inspection.sequence
+    extern domain tcpdno        production.order
+
+    extern domain tcqiv1        required.quantity, available.quantity, remaining.quantity
+    extern domain tcqiv1        total.demand, conversion.value
+
+    extern domain tccuni        inventory.unit, consumption.unit
+
+    extern domain tcmcs.long    inventory.id, detail.id
+
+    extern long                 validation.result, process.result

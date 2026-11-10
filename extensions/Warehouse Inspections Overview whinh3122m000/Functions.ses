@@ -1,0 +1,545 @@
+| Resolve the QC warehouse based on the main warehouse description.
+function extern domain tccwar get_equivalent_cwar(domain tccwar cwar){
+    domain tccwar jo.cwar
+
+    jo.cwar = ""
+
+    select tcmcs003.dsca
+    from tcmcs003
+    where tcmcs003.cwar = :cwar
+    as set with 1 rows
+    selectdo
+
+        if str_pos(toupper$(trim$(tcmcs003.dsca)), "SITE 1") > 0 then
+            jo.cwar = "1CS001"
+        endif
+
+        if str_pos(toupper$(trim$(tcmcs003.dsca)), "SITE 2") > 0 then
+            jo.cwar = "1PS001"
+        endif
+
+    endselect
+
+    return(jo.cwar)
+}
+
+| Resolve QC inventory location based on QC warehouse.
+function extern domain whloca get_location(domain tccwar cwar){
+    if cwar = "1CS001" then
+        return("110S1QCD01")
+    endif
+
+    if cwar = "1PS001" then
+        return("110S2QCD01")
+    endif
+
+    return("")
+}
+
+| Get the inventory unit for a component item.
+| Inventory must be available in the resolved QC warehouse and location.
+function extern domain tccuni get_inventory_unit(domain tcitem item, domain tccwar cwar, domain whloca loca){
+    domain tccuni unit
+    domain tcitem formatted.item
+
+    unit = ""
+    formatted.item = trim$(item)
+    
+    select tcibd001.item
+    from tcibd001
+    where tcibd001.item = "         " & :formatted.item
+        and tcibd001.citg in ("FG", "SFG", "RM/FG", "RM")
+    selectdo
+        unit = "KG"
+    selectempty
+            select txwip051.*
+            from txwip051
+            where txwip051.item = :formatted.item
+                and txwip051.cwar = :cwar
+                and txwip051.loca = :loca
+                and txwip051.ittp = 1
+            order by txwip051.idat, txwip051.inid
+            as set with 1 rows
+            selectdo
+                unit = txwip051.cuni
+            endselect
+    endselect
+    
+    return(unit)
+}
+
+| Get approved conversion factor.
+| basu = inventory unit
+| unit = consumption unit
+function extern domain tcqiv1 get_inventory_conversion(domain tcitem item, domain tccuni basu, domain tccuni unit){
+    domain tcqiv1 conversion.value
+    domain tcitem formatted.item
+
+    conversion.value = 0
+    formatted.item = "         " & trim$(item)
+    
+    select tcibd001.item
+    from tcibd001
+    where tcibd001.item = :formatted.item
+        and tcibd001.citg in ("FG", "SFG", "RM/FG", "RM")
+    selectdo
+        conversion.value = 1000
+    selectempty
+            select tcibd003.conv
+            from tcibd003
+            where tcibd003.item = :formatted.item
+                and tcibd003.basu = :basu
+                and tcibd003.unit = :unit
+                and tcibd003.appr = 1
+            as set with 1 rows
+            selectdo
+                conversion.value = tcibd003.conv
+            selectempty
+                conversion.value = 0
+            endselect
+    endselect
+
+    return(conversion.value)
+}
+
+| Get lot price.
+| whltc101 has no warehouse field.
+| Warehouse and location filtering is performed against txwip051.
+function extern domain tccopr get_inventory_lot_price(domain tcitem item, domain tcclot clot){
+    domain tccopr lot.price
+    domain tcitem format.item
+
+    lot.price = 0
+    format.item = "         " & trim$(item)
+
+    select sum(whltc101.pric(1)):lot.price
+    from whltc101
+    where whltc101.item = :format.item
+        and whltc101.clot = :clot
+        and whltc101.cpcp = "MC0002"
+    as set with 1 rows
+    selectdo
+    endselect
+
+    return(lot.price)
+}
+
+| Calculate aggregate base-unit demand for one component item.
+|
+| Includes:
+|   - Micro Per Batch materials.
+|   - Pychem standard-item materials.
+|
+| Excludes:
+|   - Micro tests not configured as Per Batch.
+|   - Pychem reagents and QC items.
+|
+| The returned quantity is expressed in the inventory unit.
+| Calculate aggregate base-unit demand for one component item.
+|
+| Includes:
+|   - Micro Per Batch materials.
+|   - Pychem standard-item materials.
+|
+| Excludes:
+|   - Micro tests not configured as Per Batch.
+|   - Micro reagents and QC items.
+|   - Pychem reagents and QC items.
+|
+| The returned quantity is expressed in the inventory unit.
+function extern domain tcqiv1 get_total_base_demand(domain tcitem item, domain tccwar cwar, domain whloca loca){
+    domain tcqiv1 total.demand
+    domain tcqiv1 conversion.value
+    domain tccuni inventory.unit
+    domain tcitem formatted.item
+
+    total.demand = 0
+    inventory.unit = get_inventory_unit(item, cwar, loca)
+    formatted.item = "         " & trim$(inspected.item)
+
+    if trim$(inventory.unit) = "" then
+        return(0)
+    endif
+
+    | Micro materials: Per Batch only.
+    select txwip037.code
+    from txwip037
+    where txwip037.item = :formatted.item
+        and txwip037.cwar = :cwar
+    selectdo
+
+        select txwip024.anly
+        from txwip024
+        where txwip024.anly = :txwip037.code
+            and txwip024.freq = 2
+        selectdo
+
+            select txwip025.mtid
+            from txwip025
+            where txwip025.anly = :txwip024.anly
+            selectdo
+
+                select txwip027.tsmm, txwip027.cuni
+                from txwip027
+                where txwip027.mtid = :txwip025.mtid
+                    and txwip027.item = :item
+                selectdo
+
+                    conversion.value = get_inventory_conversion(item, inventory.unit, txwip027.cuni)
+
+                    if conversion.value > 0 then
+                        total.demand = total.demand + (txwip027.tsmm / conversion.value)
+                    endif
+
+                endselect
+
+            endselect
+
+        endselect
+
+    endselect
+
+    | Pychem materials: standard items only.
+    select txwip037.code
+    from txwip037
+    where txwip037.item = :formatted.item
+        and txwip037.cwar = :cwar
+    selectdo
+
+        select txwip030.ptid
+        from txwip030
+        where txwip030.ptid = :txwip037.code
+        selectdo
+
+            select txwip031.aqsm
+            from txwip031
+            where txwip031.ptid = :txwip030.ptid
+                and txwip031.mttp = 1
+                and txwip031.mtrl = :item
+            selectdo
+
+                conversion.value = get_inventory_conversion(item, inventory.unit, "ML")
+
+                if conversion.value > 0 then
+                    total.demand = total.demand + (txwip031.aqsm / conversion.value)
+                endif
+
+            endselect
+
+        endselect
+
+    endselect
+
+    return(total.demand)
+}
+
+| Validate inventory for one component item.
+|
+| This validates the combined demand of all applicable Micro and Pychem tests.
+| No inventory is modified by this function.
+function extern long validate_inventory_item(domain tcitem item, domain tccwar cwar, domain whloca loca){
+    domain tcqiv1 total.demand
+    domain tcqiv1 available.quantity
+    domain tcqiv1 remaining.quantity
+    domain tcqiv1 lot.quantity
+    domain tcqiv1 lot.price
+    domain tccuni inventory.unit
+    domain tcitem formatted.item
+
+    total.demand = 0
+    available.quantity = 0
+    remaining.quantity = 0
+    lot.quantity = 0
+    lot.price = 0
+
+    inventory.unit = get_inventory_unit(item, cwar, loca)
+    formatted.item = trim$(item)
+
+    if trim$(inventory.unit) = "" then
+        message("No QC inventory unit found for item: " & trim$(item))
+        return(0)
+    endif
+
+    total.demand = get_total_base_demand(item, cwar, loca)
+
+    if total.demand <= 0 then
+        return(1)
+    endif
+
+    | Validate available stock in the resolved QC warehouse and location.
+    select sum(txwip051.qava):available.quantity
+    from txwip051
+    where txwip051.item = :formatted.item
+        and txwip051.cwar = :cwar
+        and txwip051.loca = :loca
+        and txwip051.ittp = 1
+        and txwip051.cuni = :inventory.unit
+        and txwip051.qava > 0
+    as set with 1 rows
+    selectdo
+    endselect
+
+    if available.quantity < total.demand then
+        message("Insufficient QC inventory for item: " & trim$(item) & ". Required: " & str$(total.demand) & ", Available: " & str$(available.quantity))
+        return(0)
+    endif
+
+    | Validate FIFO lot prices before any inventory updates.
+    remaining.quantity = total.demand
+
+    select txwip051.*
+    from txwip051
+    where txwip051.item = :formatted.item
+        and txwip051.cwar = :cwar
+        and txwip051.loca = :loca
+        and txwip051.ittp = 1
+        and txwip051.cuni = :inventory.unit
+        and txwip051.qava > 0
+    order by txwip051.idat, txwip051.inid
+    selectdo
+
+        if remaining.quantity > 0 then
+
+            if txwip051.qava >= remaining.quantity then
+                lot.quantity = remaining.quantity
+            else
+                lot.quantity = txwip051.qava
+            endif
+
+            lot.price = get_inventory_lot_price(item, txwip051.clot)
+
+            if lot.price <= 0 then
+                message("Missing lot cost for item: " & trim$(item) & ", Lot: " & trim$(txwip051.clot))
+                return(0)
+            endif
+
+            remaining.quantity = remaining.quantity - lot.quantity
+
+        endif
+
+    endselect
+
+    if remaining.quantity > 0 then
+        message("Unable to validate FIFO inventory for item: " & trim$(item))
+        return(0)
+    endif
+
+    return(1)
+}
+
+| Get next detail ID for one inventory transaction.
+function extern domain tcmcs.long get_next_inventory_detail_id(domain tcmcs.long inid){
+    domain tcmcs.long next.id
+
+    next.id = 0
+
+    select max(txwip052.dlid):next.id
+    from txwip052
+    where txwip052.inid = :inid
+    as set with 1 rows
+    selectdo
+    endselect
+
+    next.id = next.id + 1
+
+    return(next.id)
+}
+
+| Process one material consumption.
+|
+| qtty = original consumption quantity.
+| unit = original consumption unit.
+|
+| bqty = converted inventory quantity.
+| Inventory is deducted in FIFO order.
+function extern long process_inventory_material(domain tcitem item, domain tcqiv1 qtty, domain tccuni unit, domain tccwar cwar, domain whloca loca, domain tcorno apno, domain tcpono apsq, domain tcpdno pdno){
+    domain tcqiv1 remaining.quantity
+    domain tcqiv1 allocation.quantity
+    domain tcqiv1 base.quantity
+    domain tcqiv1 conversion.value
+    domain tcqiv1 lot.price
+    domain tcqiv1 transaction.cost
+    domain tcitem formatted.item
+
+    domain tccuni inventory.unit
+    domain tcmcs.long detail.id
+
+    remaining.quantity = qtty
+    inventory.unit = get_inventory_unit(item, cwar, loca)
+    formatted.item = trim$(item)
+
+    if trim$(inventory.unit) = "" then
+        return(0)
+    endif
+
+    conversion.value = get_inventory_conversion(item, inventory.unit, unit)
+
+    if conversion.value <= 0 then
+        message("Missing approved unit conversion for item: " & trim$(item) & ", Unit: " & trim$(unit))
+        return(0)
+    endif
+
+    | Allocate against FIFO inventory records.
+    select txwip051.*
+    from txwip051 for update
+    where txwip051.item = :formatted.item
+        and txwip051.cwar = :cwar
+        and txwip051.loca = :loca
+        and txwip051.ittp = 1
+        and txwip051.cuni = :inventory.unit
+        and txwip051.qava > 0
+    order by txwip051.idat, txwip051.inid
+    selectdo
+
+        if remaining.quantity > 0 then
+            allocation.quantity = remaining.quantity
+            base.quantity = allocation.quantity / conversion.value
+
+            if txwip051.qava < base.quantity then
+                base.quantity = txwip051.qava
+                allocation.quantity = base.quantity * conversion.value
+            endif
+
+            | Lot cost calculation.
+            |
+            | Lot price is per inventory unit.
+            | Cost is calculated using the allocated base quantity.
+            lot.price = get_inventory_lot_price(item, txwip051.clot)
+            transaction.cost = base.quantity * lot.price
+            
+            | Update available quantity only.
+            | Received quantity (qhnd) remains unchanged.
+            txwip051.qava = txwip051.qava - base.quantity
+            txwip051.dmdt = utc.num()
+
+            db.update(ttxwip051, db.retry)
+
+            | Create one consumption detail for this FIFO allocation.
+            detail.id = get_next_inventory_detail_id(txwip051.inid)
+
+            txwip052.inid = txwip051.inid
+            txwip052.dlid = detail.id
+            txwip052.trtp = ltoe(2)
+            txwip052.qtty = allocation.quantity
+            txwip052.unit = unit
+            txwip052.bqty = base.quantity
+            txwip052.tcst = transaction.cost
+            txwip052.apno = apno
+            txwip052.apsq = apsq
+            txwip052.pdno = pdno
+            txwip052.dcdt = utc.num()
+
+            db.insert(ttxwip052, db.retry)
+
+            remaining.quantity = remaining.quantity - allocation.quantity
+
+        endif
+
+    endselect
+
+    if remaining.quantity > 0 then
+        return(0)
+    endif
+
+    return(1)
+}
+
+| Process all Micro standard-item materials for the inspection.
+function extern long process_micro_materials(domain tccwar cwar, domain whloca loca, domain tcorno apno, domain tcpono apsq, domain tcpdno pdno){
+    long result
+    domain tcitem formatted.item
+
+    result = 1
+    formatted.item = "         " & trim$(inspected.item)
+
+    | Resolve mapped Micro test codes.
+    select txwip037.code
+    from txwip037
+    where txwip037.item = :formatted.item
+        and txwip037.cwar = :cwar
+    selectdo
+
+        select txwip024.anly
+        from txwip024
+        where txwip024.anly = :txwip037.code
+            and txwip024.freq = 2
+        selectdo
+
+            select txwip025.mtid
+            from txwip025
+            where txwip025.anly = :txwip024.anly
+            selectdo
+
+                select txwip027.item,
+                       txwip027.tsmm,
+                       txwip027.cuni
+                from txwip027
+                where txwip027.mtid = :txwip025.mtid
+                selectdo
+
+                    if trim$(txwip027.item) <> "" and txwip027.tsmm > 0 then
+
+                        result = process_inventory_material(txwip027.item, txwip027.tsmm, txwip027.cuni, cwar, loca, apno, apsq, pdno)
+
+                        if result = 0 then
+                            return(0)
+                        endif
+
+                    endif
+
+                endselect
+
+            endselect
+
+        endselect
+
+    endselect
+
+    return(result)
+}
+
+| Process all Pychem standard-item materials for the inspection.
+function extern long process_pychem_materials(domain tccwar cwar, domain whloca loca, domain tcorno apno, domain tcpono apsq, domain tcpdno pdno){
+    long result
+    domain tcitem formatted.item
+
+    result = 1
+    formatted.item = "         " & trim$(inspected.item)
+
+    | Resolve mapped Pychem test codes.
+    select txwip037.code
+    from txwip037
+    where txwip037.item = :formatted.item
+        and txwip037.cwar = :cwar
+    selectdo
+
+        select txwip030.ptid
+        from txwip030
+        where txwip030.ptid = :txwip037.code
+        selectdo
+
+            select txwip031.mtrl,
+                   txwip031.aqsm
+            from txwip031
+            where txwip031.ptid = :txwip030.ptid
+                and txwip031.mttp = 1
+            selectdo
+
+                if trim$(txwip031.mtrl) <> "" and txwip031.aqsm > 0 then
+
+                    result = process_inventory_material(txwip031.mtrl, txwip031.aqsm, "ML", cwar, loca, apno, apsq, pdno)
+
+                    if result = 0 then
+                        return(0)
+                    endif
+
+                endif
+
+            endselect
+
+        endselect
+
+    endselect
+
+    return(result)
+}

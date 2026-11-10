@@ -59,7 +59,7 @@ function extern void function.approve.and.process.after.command(){
 
     | VALIDATION PHASE
 
-    formatted.item = "         " & inspected.item
+    formatted.item = "         " & trim$(inspected.item)
 
     | Micro: Resolve mapped test codes and validate standard-item materials.
     select txwip037.code
