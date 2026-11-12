@@ -94,8 +94,8 @@ function extern domain whloca get_location(domain tccwar cwar){
 
 
 | Get the inventory base unit for a component item.
-| QC Inventory (txwip051) is the source of truth for the stored base unit.
-| This follows the inventory setup in txwip0500em39.
+| Prefer the base unit stored on QC inventory. For an item without a QC
+| inventory row, mirror txwip0500em037's FG/SFG/RM-FG rule.
 function extern domain tccuni get_inventory_unit(domain tcitem item, domain tccwar cwar, domain whloca loca){
     domain tccuni unit
     domain tcitem formatted.item
@@ -115,48 +115,26 @@ function extern domain tccuni get_inventory_unit(domain tcitem item, domain tccw
     selectdo
         unit = txwip051.basu
     selectempty
-        | Fallback for an item that has no QC inventory records yet.
-        select tcibd003.basu
-        from tcibd003
-        where tcibd003.item = :formatted.item
-            and tcibd003.appr = 1
+        select tcibd001.item
+        from tcibd001
+        where tcibd001.item = :formatted.item
+            and tcibd001.citg in ("FG", "SFG", "RM/FG")
         as set with 1 rows
         selectdo
-            unit = tcibd003.basu
+            unit = "G"
+        selectempty
+            select tcibd003.basu
+            from tcibd003
+            where tcibd003.item = :formatted.item
+                and tcibd003.appr = 1
+            as set with 1 rows
+            selectdo
+                unit = tcibd003.basu
+            endselect
         endselect
     endselect
 
     return(unit)
-}
-
-
-| Get the approved conversion factor from the inventory base unit to a
-| consumption or inventory quantity unit.
-| Do not hardcode KG/gram conversions here. txwip0500em39 stores the
-| applicable base unit and row conversion on txwip051.
-function extern domain tcconv get_inventory_conversion(domain tcitem item, domain tccuni basu, domain tccuni unit){
-    domain tcconv conversion.value
-    domain tcitem formatted.item
-
-    conversion.value = 0
-    formatted.item = "         " &amp; trim$(item)
-
-    if basu = unit then
-        return(1)
-    endif
-
-    select tcibd003.conv
-    from tcibd003
-    where tcibd003.item = :formatted.item
-        and tcibd003.basu = :basu
-        and tcibd003.unit = :unit
-        and tcibd003.appr = 1
-    as set with 1 rows
-    selectdo
-        conversion.value = tcibd003.conv
-    endselect
-
-    return(conversion.value)
 }
 
 
