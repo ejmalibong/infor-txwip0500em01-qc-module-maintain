@@ -25,6 +25,7 @@
     table                       ttxwip052       |* QC Inventory Details
     table                       ttcibd003       |* Item Conversion Factors
     table                       twhltc101       |* Lot Cost Details
+    table                       twhltc105       |* Lots by Warehouse
     table                       twhinh211       |* Warehouse Inspection
     table                       ttisfc001       |* Production Orders
     table                       ttcibd001       |* Items
@@ -93,8 +94,8 @@ function extern domain whloca get_location(domain tccwar cwar){
 
 
 | Get the inventory base unit for a component item.
-| FG, SFG, RM/FG and RM use KG as their inventory unit.
-| Other items use the base unit stored in QC inventory.
+| QC Inventory (txwip051) is the source of truth for the stored base unit.
+| This follows the inventory setup in txwip0500em39.
 function extern domain tccuni get_inventory_unit(domain tcitem item, domain tccwar cwar, domain whloca loca){
     domain tccuni unit
     domain tcitem formatted.item
@@ -102,42 +103,26 @@ function extern domain tccuni get_inventory_unit(domain tcitem item, domain tccw
     unit = ""
     formatted.item = "         " &amp; trim$(item)
 
-    | Preserve the existing category-based KG rule.
-    select tcibd001.item
-    from tcibd001
-    where tcibd001.item = :formatted.item
-        and tcibd001.citg in ("FG", "SFG", "RM/FG", "RM")
+    select txwip051.basu
+    from txwip051
+    where txwip051.item = :formatted.item
+        and txwip051.cwar = :cwar
+        and txwip051.loca = :loca
+        and txwip051.ittp = 1
+        and txwip051.basu &lt;&gt; ""
+    order by txwip051.idat, txwip051.inid
     as set with 1 rows
     selectdo
-        unit = "KG"
+        unit = txwip051.basu
     selectempty
-
-        | Resolve the base unit from available QC inventory.
-        select txwip051.*
-        from txwip051
-        where txwip051.item = :formatted.item
-            and txwip051.cwar = :cwar
-            and txwip051.loca = :loca
-            and txwip051.ittp = 1
-            and txwip051.qava &gt; 0
-            and txwip051.basu &lt;&gt; ""
-        order by txwip051.idat, txwip051.inid
+        | Fallback for an item that has no QC inventory records yet.
+        select tcibd003.basu
+        from tcibd003
+        where tcibd003.item = :formatted.item
+            and tcibd003.appr = 1
         as set with 1 rows
         selectdo
-            unit = txwip051.basu
-        selectempty
-
-            | Receipt-created records may have blank basu.
-            | Resolve the base unit from item conversion data.
-            select tcibd003.basu
-            from tcibd003
-            where tcibd003.item = :formatted.item
-                and tcibd003.appr = 1
-            as set with 1 rows
-            selectdo
-                unit = tcibd003.basu
-            endselect
-
+            unit = tcibd003.basu
         endselect
     endselect
 
@@ -145,9 +130,10 @@ function extern domain tccuni get_inventory_unit(domain tcitem item, domain tccw
 }
 
 
-| Get the conversion factor for a component item.
-| basu = inventory base unit.
-| unit = consumption or inventory quantity unit.
+| Get the approved conversion factor from the inventory base unit to a
+| consumption or inventory quantity unit.
+| Do not hardcode KG/gram conversions here. txwip0500em39 stores the
+| applicable base unit and row conversion on txwip051.
 function extern domain tcconv get_inventory_conversion(domain tcitem item, domain tccuni basu, domain tccuni unit){
     domain tcconv conversion.value
     domain tcitem formatted.item
@@ -155,30 +141,19 @@ function extern domain tcconv get_inventory_conversion(domain tcitem item, domai
     conversion.value = 0
     formatted.item = "         " &amp; trim$(item)
 
-    | Preserve the existing category-specific KG conversion rule.
-    select tcibd001.item
-    from tcibd001
-    where tcibd001.item = :formatted.item
-        and tcibd001.citg in ("FG", "SFG", "RM/FG", "RM")
+    if basu = unit then
+        return(1)
+    endif
+
+    select tcibd003.conv
+    from tcibd003
+    where tcibd003.item = :formatted.item
+        and tcibd003.basu = :basu
+        and tcibd003.unit = :unit
+        and tcibd003.appr = 1
     as set with 1 rows
     selectdo
-        conversion.value = 1000
-    selectempty
-
-        if basu = unit then
-            conversion.value = 1
-        else
-            select tcibd003.conv
-            from tcibd003
-            where tcibd003.item = :formatted.item
-                and tcibd003.basu = :basu
-                and tcibd003.unit = :unit
-                and tcibd003.appr = 1
-            as set with 1 rows
-            selectdo
-                conversion.value = tcibd003.conv
-            endselect
-        endif
+        conversion.value = tcibd003.conv
     endselect
 
     return(conversion.value)
@@ -207,10 +182,9 @@ function extern domain tcconv get_inventory_row_conversion(domain tcitem item, d
 }
 
 
-| Get lot price.
-| whltc101 has no warehouse field.
-| Warehouse and location filtering is performed against txwip051.
-function extern domain tccopr get_inventory_lot_price(domain tcitem item, domain tcclot clot){
+| Get lot price for the selected QC warehouse.
+| whltc101 stores the cost component; whltc105 verifies the item/lot/warehouse.
+function extern domain tccopr get_inventory_lot_price(domain tcitem item, domain tcclot clot, domain tccwar cwar){
     domain tccopr lot.price
     domain tcitem formatted.item
 
@@ -218,10 +192,13 @@ function extern domain tccopr get_inventory_lot_price(domain tcitem item, domain
     formatted.item = "         " &amp; trim$(item)
 
     select sum(whltc101.pric(1)):lot.price
-    from whltc101
+    from whltc101, whltc105
     where whltc101.item = :formatted.item
         and whltc101.clot = :clot
         and whltc101.cpcp = "MC0002"
+        and whltc105.item = :formatted.item
+        and whltc105.clot = :clot
+        and whltc105.cwar = :cwar
     as set with 1 rows
     selectdo
     endselect
@@ -454,7 +431,7 @@ function extern long validate_inventory_item(domain tcitem item, domain tccwar c
                 endif
 
                 if lot.quantity &gt; 0 then
-                    lot.price = get_inventory_lot_price(item, txwip051.clot)
+                    lot.price = get_inventory_lot_price(item, txwip051.clot, cwar)
 
                     if lot.price &lt;= 0 then
                         message("Missing lot cost for item: " &amp; trim$(item) &amp; ", Lot: " &amp; trim$(txwip051.clot))
@@ -503,32 +480,28 @@ function extern domain tcmcs.long get_next_inventory_detail_id(domain tcmcs.long
 
 | Process one material consumption.
 |
-| qtty = original consumption quantity.
-| unit = original consumption unit.
-|
-| bqty = converted inventory base quantity.
-| Inventory is deducted in FIFO order.
+| qtty = required consumption quantity in the supplied consumption unit.
+| Inventory is deducted in FIFO order using each txwip051 row's stored
+| base unit, conversion factor, and conversion unit.
+| txwip052 records the exact quantity deducted from the parent inventory row.
 function extern long process_inventory_material(domain tcitem item, domain tcqiv1 qtty, domain tccuni unit, domain tccwar cwar, domain whloca loca, domain tcorno apno, domain tcpono apsq, domain tcpdno pdno){
     domain tcqiv1 remaining.quantity
-    domain tcqiv1 allocation.quantity
     domain tcqiv1 base.quantity
     domain tcqiv1 row.quantity
     domain tcqiv1 row.base.quantity
     domain tcqiv1 lot.price
-    domain tccopr transaction.cost
     domain tcconv demand.conversion
     domain tcconv row.conversion
     domain tccuni inventory.unit
     domain tcitem formatted.item
     domain tcmcs.long detail.id
+    domain tcdate transaction.date
 
     remaining.quantity = 0
-    allocation.quantity = 0
     base.quantity = 0
     row.quantity = 0
     row.base.quantity = 0
     lot.price = 0
-    transaction.cost = 0
 
     inventory.unit = get_inventory_unit(item, cwar, loca)
     formatted.item = "         " &amp; trim$(item)
@@ -548,7 +521,6 @@ function extern long process_inventory_material(domain tcitem item, domain tcqiv
     remaining.quantity = qtty / demand.conversion
 
     | Allocate against FIFO inventory records.
-    | Each record is converted using its own cuni and conv.
     select txwip051.*
     from txwip051 for update
     where txwip051.item = :formatted.item
@@ -584,43 +556,37 @@ function extern long process_inventory_material(domain tcitem item, domain tcqiv
 
             if base.quantity &gt; 0 then
 
-                | Convert the allocated base quantity back to this record's cuni.
+                | Convert the allocated base quantity back to this record's unit.
                 row.quantity = base.quantity * row.conversion
 
-                | Convert the allocated base quantity back to the consumption unit.
-                allocation.quantity = base.quantity * demand.conversion
-
-                lot.price = get_inventory_lot_price(item, txwip051.clot)
+                lot.price = get_inventory_lot_price(item, txwip051.clot, cwar)
 
                 if lot.price &lt;= 0 then
                     message("Missing lot cost for item: " &amp; trim$(item) &amp; ", Lot: " &amp; trim$(txwip051.clot))
                     return(0)
                 endif
 
-                | Lot price is per inventory base unit.
-                transaction.cost = base.quantity * lot.price
-
-                | Update available quantity only.
-                | Received quantity (qhnd) remains unchanged.
+                | Update available quantity only. Received quantity remains unchanged.
                 txwip051.qava = txwip051.qava - row.quantity
                 txwip051.dmdt = utc.num()
 
                 db.update(ttxwip051, db.retry)
 
-                | Create one consumption detail for this FIFO allocation.
+                | Create one detail for this FIFO allocation.
+                | qtty/unit mirror the quantity and unit deducted from txwip051.
                 detail.id = get_next_inventory_detail_id(txwip051.inid)
+                transaction.date = utc.num()
 
                 txwip052.inid = txwip051.inid
                 txwip052.dlid = detail.id
                 txwip052.trtp = ltoe(2)
-                txwip052.qtty = allocation.quantity
-                txwip052.unit = unit
-                txwip052.bqty = base.quantity
-                txwip052.tcst = transaction.cost
+                txwip052.qtty = row.quantity
+                txwip052.unit = txwip051.cuni
                 txwip052.apno = apno
                 txwip052.apsq = apsq
                 txwip052.pdno = pdno
-                txwip052.dcdt = utc.num()
+                txwip052.dcdt = transaction.date
+                txwip052.dmdt = transaction.date
 
                 db.insert(ttxwip052, db.retry)
 
@@ -753,50 +719,50 @@ function extern boolean ext.is.cdfs.of.ref.tables.selected()
 	return(true)
 }
 
-| Hook function.approve.and.process.after.command
-#context_on "function.approve.and.process.after.command"
-function extern void function.approve.and.process.after.command(){
-    long already.processed
-
-    | Only production warehouse inspections are processed
-    if whinh211.oorg &lt;&gt; ltoe(50) then
-        return
-    endif
-
-    | Capture inspection information.
+| Shared inspection context for the Before and After Command hooks.
+function extern long load_inventory_inspection_context(){
     inspection.number = whinh211.apno
     inspection.sequence = whinh211.apsq
     production.order = whinh211.orno
     inspected.item = trim$(whinh211.item)
 
     if trim$(inspection.number) = "" then
-        return
+        message("Warehouse inspection number is missing.")
+        return(0)
     endif
 
     if trim$(production.order) = "" then
-        return
+        message("Production order is missing from the warehouse inspection.")
+        return(0)
     endif
 
     if trim$(inspected.item) = "" then
-        return
+        message("Inspected item is missing from the warehouse inspection.")
+        return(0)
     endif
 
-    | Resolve QC warehouse and location.
     qc.warehouse = get_equivalent_cwar(whinh211.cwar)
 
     if trim$(qc.warehouse) = "" then
         message("Unable to resolve QC warehouse for main warehouse: " &amp; trim$(whinh211.cwar))
-        return
+        return(0)
     endif
 
     qc.location = get_location(qc.warehouse)
 
     if trim$(qc.location) = "" then
         message("Unable to resolve QC inventory location for warehouse: " &amp; trim$(qc.warehouse))
-        return
+        return(0)
     endif
 
-    | Prevent duplicate consumption.
+    return(1)
+}
+
+
+| Return 1 when this inspection has already generated consumption details.
+function extern long is_inventory_consumption_processed(){
+    long already.processed
+
     already.processed = 0
 
     select txwip052.inid
@@ -810,21 +776,24 @@ function extern void function.approve.and.process.after.command(){
         already.processed = 1
     endselect
 
-    if already.processed = 1 then
-        return
-    endif
+    return(already.processed)
+}
 
-    | VALIDATION PHASE
+
+| Validate every applicable Micro Per Batch and Pychem standard material.
+| This function does not modify inventory.
+function extern long validate_inspection_inventory(){
+    domain tcitem formatted.item
 
     formatted.item = "         " &amp; trim$(inspected.item)
 
-    | Micro: Resolve mapped test codes and validate standard-item materials.
+    | Micro: Per Batch materials only.
     select txwip037.code
     from txwip037
-    where txwip037.item = :formatted.item 
+    where txwip037.item = :formatted.item
         and txwip037.cwar = :qc.warehouse
     selectdo
-        
+
         select txwip024.anly
         from txwip024
         where txwip024.anly = :txwip037.code
@@ -845,7 +814,7 @@ function extern void function.approve.and.process.after.command(){
                         validation.result = validate_inventory_item(txwip027.item, qc.warehouse, qc.location)
 
                         if validation.result = 0 then
-                            return
+                            return(0)
                         endif
                     endif
 
@@ -857,10 +826,10 @@ function extern void function.approve.and.process.after.command(){
 
     endselect
 
-    | Pychem: Resolve mapped test codes and validate standard-item materials.
+    | Pychem: standard-item materials only.
     select txwip037.code
     from txwip037
-    where txwip037.item = :formatted.item 
+    where txwip037.item = :formatted.item
         and txwip037.cwar = :qc.warehouse
     selectdo
 
@@ -879,7 +848,7 @@ function extern void function.approve.and.process.after.command(){
                     validation.result = validate_inventory_item(txwip031.mtrl, qc.warehouse, qc.location)
 
                     if validation.result = 0 then
-                        return
+                        return(0)
                     endif
                 endif
 
@@ -889,7 +858,65 @@ function extern void function.approve.and.process.after.command(){
 
     endselect
 
-    | PROCESSING PHASE
+    return(1)
+}
+
+
+| Hook function.approve.and.process.before.command
+#context_on "function.approve.and.process.before.command"
+function extern void function.approve.and.process.before.command(){
+    long already.processed
+
+    | Only production warehouse inspections consume QC inventory.
+    if whinh211.oorg &lt;&gt; ltoe(50) then
+        return
+    endif
+
+    if load_inventory_inspection_context() = 0 then
+        choice.again()
+        return
+    endif
+
+    already.processed = is_inventory_consumption_processed()
+
+    if already.processed = 1 then
+        return
+    endif
+
+    | Reject the standard command before approval if any material is insufficient.
+    if validate_inspection_inventory() = 0 then
+        choice.again()
+        return
+    endif
+}
+#context_off
+
+| Hook function.approve.and.process.after.command
+#context_on "function.approve.and.process.after.command"
+function extern void function.approve.and.process.after.command(){
+    long already.processed
+
+    | Only production warehouse inspections consume QC inventory.
+    if whinh211.oorg &lt;&gt; ltoe(50) then
+        return
+    endif
+
+    if load_inventory_inspection_context() = 0 then
+        return
+    endif
+
+    already.processed = is_inventory_consumption_processed()
+
+    if already.processed = 1 then
+        return
+    endif
+
+    | Revalidate after the standard command to catch stock changes since Before Command.
+    if validate_inspection_inventory() = 0 then
+        message("QC inventory consumption was not posted for inspection: " &amp; trim$(inspection.number))
+        return
+    endif
+
     process.result = process_micro_materials(qc.warehouse, qc.location, inspection.number, inspection.sequence, production.order)
 
     if process.result = 0 then
@@ -904,12 +931,10 @@ function extern void function.approve.and.process.after.command(){
         return
     endif
 
-    | Commit custom QC inventory consumption.
     commit.transaction()
 
     message("QC inventory consumption completed for inspection: " &amp; trim$(inspection.number))
-}
-#context_off
+}#context_off
 
 function extern long get.extension.point.version()
 {
@@ -990,6 +1015,7 @@ function extern long ext.get.command.extensions()
 	command = xmlNewNode("COMMAND", XML_ELEMENT, commands)
 	ret = xmlSetAttribute(command, "NAME", "approve.and.process")
 	ret = xmlSetAttribute(command, "TYPE", "FORM")
+	ret = xmlSetAttribute(command, "BEFOREHOOK", "function.approve.and.process.before.command")
 	ret = xmlSetAttribute(command, "AFTERHOOK", "function.approve.and.process.after.command")
 
 	return(commands)
